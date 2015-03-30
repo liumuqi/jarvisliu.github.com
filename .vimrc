@@ -138,7 +138,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-let g:EasyGrepMode = 1     " All:0, Open Buffers:1, TrackExt:2, 
+let g:EasyGrepMode = 3     " All:0, Open Buffers:1, TrackExt:2,                                                                                                                                                   
+let g:EasyGrepDefaultUserPattern = "*.lua *.conf *.proto *.jd.com *.jd.local"   " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepCommand = 0  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
 let g:EasyGrepIgnoreCase = 1 " not ignorecase:0

@@ -1,3 +1,5 @@
+"before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"vim must 7.4
 set rtp+=~/.vim/bundle/Vundle.vim
 "
 call vundle#begin()

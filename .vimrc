@@ -1,15 +1,14 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "vim must 7.4
 set rtp+=~/.vim/bundle/Vundle.vim
-"
 call vundle#begin()
 " let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
-Bundle 'dgryski/vim-godef'
-Bundle 'Blackrush/vim-gocode'
+"Plugin 'dgryski/vim-godef'
+"Plugin 'Blackrush/vim-gocode'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'sukima/xmledit'
@@ -160,23 +159,96 @@ let g:ctrlp_custom_ignore = "{
   \ 'file': '\v\.(exe|so|dll|log)$',
   \ 'link': 'some_bad_symbolic_links',
   \}"
-"=====================================================================================
+"======neocomlete===============================================================================
+set completeopt-=preview
 let g:neocomplete#enable_at_startup       = 1
-let g:neocomplete#disable_auto_complete   = 1
+let g:neocomplete#disable_auto_complete   = 0
 let g:neocomplete#enable_ignore_case      = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#data_directory          = '~/tmp/.neocomplete'
 " let g:neosnippet#enable_preview = 0
-" set completeopt+=preview
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+"let g:acp_enableAtStartup = 0
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+"let g:neocomplete#sources#dictionary#dictionaries = {
+"    \ 'default' : '',
+"    \ 'vimshell' : $HOME.'/.vimshell_hist',
+"    \ 'scheme' : $HOME.'/.gosh_completions'
+"        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-c>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+"=====================================================================================
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
@@ -185,19 +257,6 @@ endif
 "
 "hi link EasyMotionTarget2First MatchParen
 "hi link EasyMotionTarget2Second MatchParen
-"自动补全配置
-"autocmd FileType python set omnifunc=pythoncomplete#Complete 
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
-"autocmd FileType c set omnifunc=ccomplete#Complete 
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/javascript.dic
 autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/node.dic
 autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
@@ -254,60 +313,6 @@ let g:EasyMotion_startofline = 0
 "	let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
 "	let filename = fnamemodify (label, ':t')
 "	return filename
-"endfunction
-" vim 标签样式
-" TabLineFill tab pages line, where there are no labels
-hi TabLineFill term=none
-hi TabLineFill ctermfg=DarkGrey
-hi TabLineFill guifg=#777777
-" TabLineSel tab pages line, active tab page label
-hi TabLineSel term=inverse
-hi TabLineSel cterm=none ctermfg=yellow ctermbg=Black
-hi TabLineSel gui=none guifg=yellow guibg=Black
-" Develop editing options
-au FileType vim setl expandtab
-au FileType vim setl shiftwidth=2
-au FileType vim setl tabstop=2
-" 显示状态栏(默认值为 1，无法显示状态栏)
-set laststatus=2
-" Format the statusline
-"set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}E5%h\ \ \ Line:\ %l/%L:%c 
-function!  CurDir()
-	let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
-	return curdir
-endfunction
-"#######################设置PHP函数自动提醒#########################Ｓｔａｒｔ
-"设置字典自动完成
-"set complete+=k
-""设置字典
-"set dictionary=~/.vim/doc/php_funclist.txt
-"" 自动完成使用ＴＡＢ键
-"function!  InsertTabWrapper()
-"	let col=col('.')-1
-"	if !col || getline('.')[col-1] !~ '\k'
-"		return "\<TAB>"
-"	else
-"		return "\<C-N>"
-"	endif
-"endfunction
-""将InsertTabWrapper映射到ＴＡＢ上
-"inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
-"#######################设置PHP函数自动提醒#########################Ｅｎｄ
-"#######中括号 大括号 小括号 自动补全
-":inoremap ( ()<ESC>i
-":inoremap) <c-r>=ClosePair(')')<CR>
-":inoremap { {}<ESC>i
-":inoremap } <c-r>=ClosePair('}')<CR>
-":inoremap [ []<ESC>i
-":inoremap ] <c-r>=ClosePair(']')<CR>
-":inoremap < <><ESC>i
-":inoremap > <c-r>=ClosePair('>')<CR>
-"function ClosePair(char)
-"	if getline('.')[col('.') - 1] == a:char
-"		return "\<Right>"
-"	else
-"		return a:char
-"	endif
 "endfunction
 "#######中括号 大括号 小括号 自动补全
 au FileType go nmap <leader>r <Plug>(go-run)

@@ -6,6 +6,8 @@ Plugin 'gmarik/vundle'
 "
 "my Plugin here:
 " original repos on github
+Bundle 'dgryski/vim-godef'
+Bundle 'Blackrush/vim-gocode'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'sukima/xmledit'
@@ -198,6 +200,7 @@ autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/
 autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/node.dic
 autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
 autocmd filetype php setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/php.dic
+autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'

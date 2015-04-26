@@ -276,6 +276,8 @@ autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/
 autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/node.dic
 autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
 autocmd filetype php setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/php.dic
+"autocmd FileType go compiler go 
+"let g:golang_goroot ="/usr/local/go"
 autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>

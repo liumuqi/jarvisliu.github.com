@@ -11,14 +11,12 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'Blackrush/vim-gocode'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
-Plugin 'sukima/xmledit'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
@@ -29,11 +27,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'asins/vimcdoc'
 Plugin 'asins/vim-dict'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'matchit.zip' " 通过%跳转配对代码
 Plugin 'Yggdroot/indentLine'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'asins/vim-colors'
 Plugin 'scrooloose/nerdtree'
@@ -42,7 +42,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'gregsexton/gitv'
 "..................................
 " vim-scripts repos
-Plugin 'YankRing.vim'
 Plugin 'vcscommand.vim'
 "Plugin 'SudoEdit.vim'
 Plugin 'EasyGrep'
@@ -58,7 +57,6 @@ Plugin 'JavaScript-syntax'
 Plugin 'mako.vim'
 Plugin 'moin.vim'
 Plugin 'python.vim--Vasiliev'
-Plugin 'xml.vim'
 " Color
 Plugin 'desert256.vim'
 Plugin 'Impact'
@@ -82,12 +80,12 @@ Plugin 'fcitx.vim'
 Plugin 'FencView.vim'
 "Plugin 'FuzzyFinder'
 Plugin 'jsbeautify'
-Plugin 'L9'
+"Plugin 'L9'
 Plugin 'Mark'
 Plugin 'mru.vim'
 "Plugin 'The-NERD-Commenter'
 Plugin 'restart.vim'
-Plugin 'templates.vim'
+"Plugin 'templates.vim'
 "Plugin 'vimim.vim'
 Plugin 'ZenCoding.vim'
 Plugin 'css_color.vim'
@@ -137,12 +135,14 @@ colorscheme  vividchalk
 set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 "set mouse=v " 设置粘贴和复制
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-let g:EasyGrepMode = 3     " All:0, Open Buffers:1, TrackExt:2,                                                                                                                                                   
+" ===================================================
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+"=====================================================
+let g:EasyGrepMode = 3     " All:0, Open Buffers:1, TrackExt:2,
 let g:EasyGrepDefaultUserPattern = "*.lua *.conf *.proto *.jd.com *.jd.local"   " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepCommand = 0  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
@@ -166,13 +166,13 @@ let g:neocomplete#disable_auto_complete   = 0
 let g:neocomplete#enable_ignore_case      = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#data_directory          = '~/tmp/.neocomplete'
-" let g:neosnippet#enable_preview = 0
+let g:neosnippet#enable_preview = 1
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 "let g:acp_enableAtStartup = 0
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+"let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
@@ -189,8 +189,8 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-c>     neocomplete#complete_common_string()
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-c>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -207,8 +207,16 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " For cursor moving in insert mode(Not recommended)
 "inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
@@ -247,11 +255,18 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "=====================================================================================
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 "hi link EasyMotionTarget ErrorMsg
 "hi link EasyMotionShade  Comment
 "

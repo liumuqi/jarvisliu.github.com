@@ -1,5 +1,9 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "vim must 7.4
+filetype off
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+" set mapleader
+"let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
@@ -59,6 +63,7 @@ Plugin 'moin.vim'
 Plugin 'python.vim--Vasiliev'
 " Color
 Plugin 'desert256.vim'
+Plugin 'fatih/molokai'
 Plugin 'Impact'
 Plugin 'matrix.vim'
 Plugin 'vibrantink'
@@ -94,7 +99,6 @@ Plugin 'css_color.vim'
 call vundle#end()
 filetype plugin indent on
 set modelines=0		" CVE-2007-2438
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set hls
 set incsearch
 set ic
@@ -112,8 +116,9 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 au BufWrite /tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
-filetype  plugin indent on
 syntax on
+set cursorline "设置光标行线
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set nocp    "设置兼容
 set expandtab   "设置tab
 set shiftwidth=4    "设置tab的间隔
@@ -130,7 +135,7 @@ set encoding=utf-8  "设置编码为utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,GB18030,cp936,big5,euc-jp,euc-kr,latin1
 set helplang=cn "帮助中文支持
-colorscheme  vividchalk
+colorscheme molokai
 " Display extra whitespace
 set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 "set mouse=v " 设置粘贴和复制
@@ -151,6 +156,11 @@ let g:EasyGrepFilesToExclude = "*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak,*.lo
 nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
+"====================================================
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 "=====================================================================================
 let g:ctrlp_map = '<c-l>'
 let g:ctrlp_working_path_mode = '0'
@@ -348,11 +358,12 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"========Syntastic====================
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1

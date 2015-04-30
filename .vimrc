@@ -26,6 +26,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-jp/vim-go-extra'
+Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tacahiroy/ctrlp-funky'
@@ -49,6 +50,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'vcscommand.vim'
 "Plugin 'SudoEdit.vim'
 Plugin 'EasyGrep'
+"Plugin 'dkprice/vim-easygrep'
 "Plugin 'VimIM'
 "......................................
 " My Plugins here:
@@ -98,6 +100,7 @@ Plugin 'css_color.vim'
 "Plugin 'hallettj/jslint.vim'
 call vundle#end()
 filetype plugin indent on
+set grepprg=ack
 set modelines=0		" CVE-2007-2438
 set hls
 set incsearch
@@ -147,12 +150,12 @@ set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 "=====================================================
-let g:EasyGrepMode = 3     " All:0, Open Buffers:1, TrackExt:2,
-let g:EasyGrepDefaultUserPattern = "*.lua *.conf *.proto *.jd.com *.jd.local"   " All:0, Open Buffers:1, TrackExt:2,
-"let g:EasyGrepCommand = 0  " Use vimgrep:0, grepprg:1
+let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
+"let g:EasyGrepDefaultUserPattern = "*.go *.lua *.conf *.proto"
+let g:EasyGrepCommand = 1  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
 let g:EasyGrepIgnoreCase = 1 " not ignorecase:0
-let g:EasyGrepFilesToExclude = "*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak,*.log"
+let g:EasyGrepFilesToExclude = "*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak, *.log"
 nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
@@ -342,18 +345,18 @@ let g:EasyMotion_startofline = 0
 "	return filename
 "endfunction
 "#######中括号 大括号 小括号 自动补全
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <leader>gc <Plug>(go-coverage)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gvv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
-au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+au FileType go nmap <Leader>gi <Plug>(go-implements)
+au FileType go nmap <Leader>go <Plug>(go-info)
+au FileType go nmap <Leader>ge <Plug>(go-rename)
+au Filetype go nnoremap <leader>vp :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

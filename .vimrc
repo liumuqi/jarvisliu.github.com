@@ -1,7 +1,7 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "vim must 7.4
 filetype off
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set nocompatible" Use Vim defaults instead of 100% vi compatibility
 " set mapleader
 "let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,8 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
-"Plugin 'dgryski/vim-godef'
-"Plugin 'Blackrush/vim-gocode'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'sjl/gundo.vim'
@@ -141,6 +139,9 @@ set helplang=cn "帮助中文支持
 colorscheme molokai
 " Display extra whitespace
 set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+set laststatus=2   " Always show the statusline
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 "set mouse=v " 设置粘贴和复制
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " ===================================================
@@ -335,7 +336,7 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 "map  n <Plug>(easymotion-next)
 "map  N <Plug>(easymotion-prev)
-let g:EasyMotion_startofline = 0 
+let g:EasyMotion_startofline = 1
 " 对应使用函数的配置
 "set guitablabel=%{ShortTabLabel()}
 "function ShortTabLabel ()

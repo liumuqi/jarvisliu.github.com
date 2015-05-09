@@ -1,9 +1,9 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "vim must 7.4
 filetype off
-set nocompatible" Use Vim defaults instead of 100% vi compatibility
+set nocompatible "Use Vim defaults instead of 100% vi compatibility
 " set mapleader
-"let mapleader = ","
+let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
@@ -98,6 +98,7 @@ Plugin 'css_color.vim'
 "Plugin 'hallettj/jslint.vim'
 call vundle#end()
 filetype plugin indent on
+filetype plugin on
 set grepprg=ack
 set modelines=0		" CVE-2007-2438
 set hls

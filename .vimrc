@@ -3,7 +3,6 @@
 filetype off
 set nocompatible "Use Vim defaults instead of 100% vi compatibility
 " set mapleader
-let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
@@ -18,7 +17,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
@@ -27,6 +26,7 @@ Plugin 'vim-jp/vim-go-extra'
 Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-pathogen'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'asins/vimcdoc'
 Plugin 'asins/vim-dict'
@@ -48,7 +48,6 @@ Plugin 'gregsexton/gitv'
 Plugin 'vcscommand.vim'
 "Plugin 'SudoEdit.vim'
 Plugin 'EasyGrep'
-"Plugin 'dkprice/vim-easygrep'
 "Plugin 'VimIM'
 "......................................
 " My Plugins here:
@@ -60,7 +59,6 @@ Plugin 'confluencewiki.vim'
 Plugin 'JavaScript-syntax'
 Plugin 'mako.vim'
 Plugin 'moin.vim'
-Plugin 'python.vim--Vasiliev'
 " Color
 Plugin 'desert256.vim'
 Plugin 'fatih/molokai'
@@ -69,13 +67,11 @@ Plugin 'matrix.vim'
 Plugin 'vibrantink'
 Plugin 'vividchalk.vim'
 " Ftplugin
-Plugin 'python_fold'
 " Indent
 Plugin 'othree/html5.vim'
 Plugin 'IndentAnything'
 Plugin 'Javascript-Indentation'
 Plugin 'mako.vim--Torborg'
-Plugin 'gg/python.vim'
 " Plugin
 Plugin 'The-NERD-tree'
 Plugin 'AutoClose--Alves'
@@ -97,6 +93,8 @@ Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
 "Plugin 'hallettj/jslint.vim'
 call vundle#end()
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
 filetype plugin on
 set grepprg=ack

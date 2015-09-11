@@ -3,6 +3,7 @@
 filetype off
 set nocompatible "Use Vim defaults instead of 100% vi compatibility
 " set mapleader
+let mapleader=","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
@@ -73,7 +74,6 @@ Plugin 'IndentAnything'
 Plugin 'Javascript-Indentation'
 Plugin 'mako.vim--Torborg'
 " Plugin
-Plugin 'The-NERD-tree'
 Plugin 'AutoClose--Alves'
 Plugin 'auto_mkdir'
 Plugin 'cecutil'
@@ -84,7 +84,6 @@ Plugin 'jsbeautify'
 "Plugin 'L9'
 Plugin 'Mark'
 Plugin 'mru.vim'
-"Plugin 'The-NERD-Commenter'
 Plugin 'restart.vim'
 "Plugin 'templates.vim'
 "Plugin 'vimim.vim'
@@ -144,6 +143,7 @@ let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_stl_path_style = 'full'
 "set mouse=v " 设置粘贴和复制
+set mouse=a
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " ===================================================
 "let g:UltiSnipsExpandTrigger="<tab>"
@@ -323,7 +323,6 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 " ############################键盘映射设置区域###############################
 map <F2> :NERDTreeToggle<CR>
-map <F4> t :NERDTreeMirror<CR>
 nnoremap <F8> :GundoToggle<CR>
 " ###########################MAC 系统 剪切板  ##############################
 vmap <C-c> :w !pbcopy<cr><cr>
@@ -366,11 +365,44 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 "========Syntastic====================
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_aggregate_errors = 1
+let g:syntastic_error_symbol='▶'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_highlighting=1
+"let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
+"let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+"let g:syntastic_html_checkers=['tidy', 'jshint']
+" 修改高亮的背景色, 适应主题
+highlight SyntasticErrorSign guifg=white guibg=black
+" to see error location list
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 15
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+nnoremap <Leader>s :call ToggleErrors()<cr>
+" nnoremap <Leader>sn :lnext<cr>
+" nnoremap <Leader>sp :lprevious<cr>
+"=======================nerdtree=====================
+" Globals
+" NERDTree width
+let g:NERDTreeWinSize = 42
+let NERDTreeShowHidden=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeWinPos='left'
+"===================================================

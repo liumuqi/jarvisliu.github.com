@@ -13,6 +13,9 @@ Plugin 'gmarik/Vundle.vim'
 " original repos on github
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
+Bundle 'ervandew/supertab'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 "Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -146,11 +149,11 @@ let g:Powerline_stl_path_style = 'full'
 set mouse=a
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " ===================================================
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="vertical"
 "=====================================================
 let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepDefaultUserPattern = "*.go *.lua *.conf *.proto"

@@ -13,13 +13,13 @@ Plugin 'gmarik/Vundle.vim'
 " original repos on github
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
+"Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
 Plugin 'SirVer/ultisnips'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
@@ -291,7 +291,7 @@ autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/
 autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/node.dic
 autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
 autocmd filetype php setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/php.dic
-"autocmd FileType go compiler go 
+autocmd FileType go compiler go 
 "let g:golang_goroot ="/usr/local/go"
 autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
@@ -364,6 +364,8 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"let g:go_bin_path = expand("~/.gotools")
+"let g:go_bin_path = "/home/fatih/.mypath"
 "========Syntastic====================
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}

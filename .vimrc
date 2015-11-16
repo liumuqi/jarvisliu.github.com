@@ -329,7 +329,7 @@ map <F2> :NERDTreeToggle<CR>
 nnoremap <F8> :GundoToggle<CR>
 " ###########################MAC 系统 剪切板  ##############################
 vmap <C-c> :w !pbcopy<cr><cr>
-nmap <C-v> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <C-i> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 vmap <C-x> :!pbcopy<cr>
 "####################################################
 map <Leader> <Plug>(easymotion-prefix)

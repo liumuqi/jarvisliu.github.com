@@ -19,9 +19,10 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
-Plugin 'Shougo/echodoc.vim'
-"Plugin 'SirVer/ultisnips'
+"Plugin 'Shougo/echodoc.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/syntastic'
+Plugin 'andviro/flake8-vim'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-jp/vim-go-extra'
@@ -93,8 +94,8 @@ Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
 "Plugin 'hallettj/jslint.vim'
 call vundle#end()
-"call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
 filetype plugin on
 
@@ -114,9 +115,9 @@ let g:Powerline_stl_path_style = 'full'
 "set mouse=a
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " ===================================================
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "" If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "=====================================================
@@ -149,7 +150,7 @@ let g:neocomplete#enable_ignore_case      = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#data_directory          = '~/tmp/.neocomplete'
 let g:neosnippet#enable_preview = 1
-let g:echodoc_enable_at_startup = 1
+"let g:echodoc_enable_at_startup = 1
 
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -261,9 +262,9 @@ endif
 "autocmd filetype javascript setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/node.dic
 "autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
 "autocmd filetype php setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/php.dic
-"autocmd FileType go compiler go 
+autocmd FileType go compiler go 
 let g:go_autodetect_gopath = 1
-"let g:golang_goroot ="/usr/local/go"
+let g:golang_goroot ="/usr/local/go"
 autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>
@@ -329,6 +330,17 @@ au FileType go nmap <Leader>go <Plug>(go-info)
 au FileType go nmap <Leader>ge <Plug>(go-rename)
 au Filetype go nnoremap <leader>vp :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
+
+
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
+nmap <Space>j <Plug>(quickhl-cword-toggle)
+nmap <Space>] <Plug>(quickhl-tag-toggle)
+map H <Plug>(operator-quickhl-manual-this-motion)
+
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -339,28 +351,32 @@ let g:go_bin_path = expand(".:~/golibs")
 "let g:go_bin_path = "/home/fatih/.mypath"
 
 "========Syntastic====================
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+
 let g:syntastic_aggregate_errors = 1
-
-
-
-
+let g:syntastic_loc_list_height = 8
 let g:syntastic_error_symbol='▶'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_enable_highlighting=1
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+
 "let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
 "let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 "let g:syntastic_html_checkers=['tidy', 'jshint']
 " 修改高亮的背景色, 适应主题
 highlight SyntasticErrorSign guifg=white guibg=black
 " to see error location list
-let g:syntastic_loc_list_height = 13
 function! ToggleErrors()
     let old_last_winnr = winnr('$')
-    lclose
+        lclose
     if old_last_winnr == winnr('$')
         " Nothing was closed, open syntastic error location panel
         Errors
@@ -369,6 +385,10 @@ endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
 nnoremap <Leader>sn :lnext<cr>
 nnoremap <Leader>sp :lprevious<cr>
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+    exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 "=======================nerdtree=====================
 " Globals
 " NERDTree width
@@ -415,10 +435,6 @@ set encoding=utf-8  "设置编码为utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,GB18030,cp936,big5,euc-jp,euc-kr,latin1
 set helplang=cn "帮助中文支持
-"set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
 colorscheme molokai
 " Display extra whitespace
 set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
@@ -435,6 +451,5 @@ set guioptions+=T
 set guioptions+=m
 hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
-set path+=/usr/src/linux/include/
+set path+=/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/
 set completeopt=menuone,menu,longest,preview
-

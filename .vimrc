@@ -115,11 +115,11 @@ let g:Powerline_stl_path_style = 'full'
 "set mouse=a
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " ===================================================
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsEditSplit="vertical"
 "=====================================================
 let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepDefaultUserPattern = "*.go *.lua *.conf *.proto"
@@ -166,7 +166,6 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 "    \ 'vimshell' : $HOME.'/.vimshell_hist',
 "    \ 'scheme' : $HOME.'/.gosh_completions'
 "        \ }
-
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
@@ -187,6 +186,7 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -210,9 +210,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 "inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
 "inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 " Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
+let g:neocomplete#enable_cursor_hold_i = 1
 " Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
+let g:neocomplete#enable_insert_char_pre = 1
 
 " AutoComplPop like behavior.
 let g:neocomplete#enable_auto_select = 1
@@ -221,7 +221,6 @@ let g:neocomplete#enable_auto_select = 1
 "set completeopt+=longest
 "let g:neocomplete#enable_auto_select = 1
 "let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -347,9 +346,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_bin_path = expand(".:~/golibs")
-"let g:go_bin_path = "/home/fatih/.mypath"
-
+let g:go_bin_path = expand("~/golibs")
 "========Syntastic====================
 "let g:syntastic_always_populate_loc_list = 0
 "let g:syntastic_auto_loc_list = 1
@@ -452,4 +449,6 @@ set guioptions+=m
 hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
 set path+=/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/
+set path+=/Users/lmq/golibs
+set path+=expand(".")
 set completeopt=menuone,menu,longest,preview

@@ -141,7 +141,7 @@ let g:neocomplete#disable_auto_complete   = 0
 let g:neocomplete#enable_ignore_case      = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#data_directory          = '~/tmp/.neocomplete'
-let g:neosnippet#enable_preview = 1
+let g:neosnippet#enable_preview = 0
 let g:echodoc_enable_at_startup = 1
 
 
@@ -238,6 +238,10 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " For snippet_complete marker.
 if has('conceal')
@@ -359,6 +363,9 @@ let g:syntastic_enable_highlighting=1
 highlight SyntasticErrorSign guifg=white guibg=black
 " to see error location list
 let g:syntastic_loc_list_height = 13
+function! CloseScratch() abort
+    pc
+endfunction
 function! ToggleErrors()
     let old_last_winnr = winnr('$')
     lclose
@@ -368,6 +375,7 @@ function! ToggleErrors()
     endif
 endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
+nnoremap <Leader>p :call CloseScratch()<cr>
 nnoremap <Leader>sn :lnext<cr>
 nnoremap <Leader>sp :lprevious<cr>
 "=======================nerdtree=====================

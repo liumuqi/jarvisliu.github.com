@@ -19,7 +19,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
-Plugin 'Shougo/echodoc.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
@@ -85,15 +84,15 @@ Plugin 'jsbeautify'
 Plugin 'Mark'
 Plugin 'mru.vim'
 Plugin 'restart.vim'
-"Plugin 'templates.vim'
+Plugin 'templates.vim'
 "Plugin 'vimim.vim'
 Plugin 'ZenCoding.vim'
 Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
 "Plugin 'hallettj/jslint.vim'
 call vundle#end()
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 filetype plugin indent on
 filetype plugin on
 
@@ -117,7 +116,7 @@ let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepDefaultUserPattern = "*.go *.lua *.conf *.proto"
 let g:EasyGrepCommand = 1  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
-let g:EasyGrepIgnoreCase = 1 " not ignorecase:0
+let g:EasyGrepIgnoreCase = 0 " not ignorecase:0
 let g:EasyGrepFilesToExclude = "*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak, *.log"
 nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
@@ -142,7 +141,6 @@ let g:neocomplete#enable_ignore_case      = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#data_directory          = '~/tmp/.neocomplete'
 let g:neosnippet#enable_preview = 0
-let g:echodoc_enable_at_startup = 1
 
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -259,8 +257,7 @@ endif
 "autocmd filetype css setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/css.dic
 "autocmd filetype php setlocal dictionary+=$VIMFILES/bundle/vim-dict/dict/php.dic
 "autocmd FileType go compiler go 
-let g:go_autodetect_gopath = 1
-"let g:golang_goroot ="/usr/local/go"
+
 autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>
@@ -272,6 +269,8 @@ let Tlist_File_Fold_Auto_Close=1        "非当前文件，函数列表折叠隐
 "let Tlist_Exit_OnlyWindow=1 "当taglist是最后一个分割窗口时，自动推出vim 
 let Tlist_Process_File_Always=1         "是否一直处理tags.1:处理;0:不处理  
 let Tlist_Inc_Winwidth=1 "不是一直实时更新tags，因为没有必要  
+
+
 " =================================进行Taglist的设置<End>==============================
 hi MarkWord1  ctermbg=Cyan     ctermfg=Black  guibg=#8CCBEA    guifg=Black
 hi MarkWord2  ctermbg=Green    ctermfg=Black  guibg=#A4E57E    guifg=Black
@@ -326,26 +325,31 @@ au FileType go nmap <Leader>go <Plug>(go-info)
 au FileType go nmap <Leader>ge <Plug>(go-rename)
 au Filetype go nnoremap <leader>vp :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
-nmap <Space>M <Plug>(quickhl-manual-reset)
-xmap <Space>M <Plug>(quickhl-manual-reset)
-
-nmap <Space>j <Plug>(quickhl-cword-toggle)
-nmap <Space>] <Plug>(quickhl-tag-toggle)
-map H <Plug>(operator-quickhl-manual-this-motion)
+"nmap <Space>m <Plug>(quickhl-manual-this)
+"xmap <Space>m <Plug>(quickhl-manual-this)
+"nmap <Space>M <Plug>(quickhl-manual-reset)
+"xmap <Space>M <Plug>(quickhl-manual-reset)
+"
+"nmap <Space>j <Plug>(quickhl-cword-toggle)
+"nmap <Space>] <Plug>(quickhl-tag-toggle)
+"map H <Plug>(operator-quickhl-manual-this-motion)
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_bin_path = expand(".:~/golibs")
-"let g:go_bin_path = "/home/fatih/.mypath"
-
+let g:go_bin_path = expand("~/golibs/bin")
+let g:go_autodetect_gopath = 1
+let g:go_oracle_scope = expand('./')
+let g:go_auto_type_info = 1
+let g:go_snippet_engine = 'neosnippet'
+let g:go_highlight_build_constraints = 1
+let g:go_quickfix_height = 10
+let g:golang_goroot ="/usr/local/go"
 "========Syntastic====================
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
@@ -360,9 +364,9 @@ let g:syntastic_enable_highlighting=1
 "let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 "let g:syntastic_html_checkers=['tidy', 'jshint']
 " 修改高亮的背景色, 适应主题
-highlight SyntasticErrorSign guifg=white guibg=black
+highlight SyntasticErrorSign guifg=red guibg=black
 " to see error location list
-let g:syntastic_loc_list_height = 13
+let g:syntastic_loc_list_height = 6
 function! CloseScratch() abort
     pc
 endfunction
@@ -375,7 +379,7 @@ function! ToggleErrors()
     endif
 endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
-nnoremap <Leader>p :call CloseScratch()<cr>
+nnoremap <Leader>c :call CloseScratch()<cr>
 nnoremap <Leader>sn :lnext<cr>
 nnoremap <Leader>sp :lprevious<cr>
 "=======================nerdtree=====================
@@ -392,7 +396,7 @@ set hls
 set incsearch
 set ic
 set wrap
-set backspace=2		" more powerful backspacing
+set backspace=2 " more powerful backspacing
 set list lcs=tab:\|\ 
 "1. manual //手工定义折叠
 "2. indent //用缩进表示折叠
@@ -446,4 +450,3 @@ hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
 set path+=/usr/src/linux/include/
 set completeopt=menuone,menu,longest,preview
-

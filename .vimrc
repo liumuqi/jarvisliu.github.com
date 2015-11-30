@@ -290,7 +290,7 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 " ############################键盘映射设置区域###############################
 map <F2> :NERDTreeToggle<CR>
-nnoremap <F8> :GundoToggle<CR>
+nnoremap <F9> :GundoToggle<CR>
 " ###########################MAC 系统 剪切板  ##############################
 vmap <C-f> :w !pbcopy<cr><cr>
 nmap <C-e> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -347,6 +347,8 @@ let g:go_snippet_engine = 'neosnippet'
 let g:go_highlight_build_constraints = 1
 let g:go_quickfix_height = 10
 let g:golang_goroot ="/usr/local/go"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 "========Syntastic====================
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0

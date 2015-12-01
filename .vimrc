@@ -345,7 +345,7 @@ let g:go_oracle_scope = expand('./')
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = 'neosnippet'
 let g:go_highlight_build_constraints = 1
-let g:go_quickfix_height = 10
+let g:go_quickfix_height = 6
 let g:golang_goroot ="/usr/local/go"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
@@ -387,7 +387,7 @@ nnoremap <Leader>sp :lprevious<cr>
 "=======================nerdtree=====================
 " Globals
 " NERDTree width
-let g:NERDTreeWinSize = 42
+let g:NERDTreeWinSize = 45
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
@@ -450,5 +450,5 @@ set guioptions+=T
 set guioptions+=m
 hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
-set path+=/usr/src/linux/include/
+set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview

@@ -9,6 +9,12 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
+Plugin 'vim-ruby/vim-ruby'
+"自动补全end
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Bundle 'rizzatti/funcoo.vim'
@@ -16,6 +22,7 @@ Bundle 'rizzatti/dash.vim'
 Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kshenoy/vim-signature'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
@@ -271,6 +278,17 @@ let Tlist_Process_File_Always=1         "是否一直处理tags.1:处理;0:不�
 let Tlist_Inc_Winwidth=1 "不是一直实时更新tags，因为没有必要  
 
 
+
+" Cucumber navigation commands
+autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+
+" RSpec.vim mappings
+au FileType rb map <Leader>t :call RunCurrentSpecFile()<CR>
+au FileType rb map <Leader>s :call RunNearestSpec()<CR>
+au FileType rb map <Leader>l :call RunLastSpec()<CR>
+au FileType rb map <Leader>a :call RunAllSpecs()<CR>
+
 " =================================进行Taglist的设置<End>==============================
 hi MarkWord1  ctermbg=Cyan     ctermfg=Black  guibg=#8CCBEA    guifg=Black
 hi MarkWord2  ctermbg=Green    ctermfg=Black  guibg=#A4E57E    guifg=Black
@@ -341,11 +359,12 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/golibs/bin")
 let g:go_autodetect_gopath = 1
-let g:go_oracle_scope = expand('./')
+let gomypath=$GOPATH
+"let g:go_oracle_scope = expand(gomypath)
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = 'neosnippet'
 let g:go_highlight_build_constraints = 1
-let g:go_quickfix_height = 6
+let g:go_quickfix_height = 16
 let g:golang_goroot ="/usr/local/go"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
@@ -368,7 +387,7 @@ let g:syntastic_enable_highlighting=1
 " 修改高亮的背景色, 适应主题
 highlight SyntasticErrorSign guifg=red guibg=black
 " to see error location list
-let g:syntastic_loc_list_height = 6
+let g:syntastic_loc_list_height = 16
 function! CloseScratch() abort
     pc
 endfunction
@@ -452,3 +471,4 @@ hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
 set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif " MacOSX/Linux"

@@ -84,10 +84,11 @@ export LANG=zh_CN.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux='tmux -2'
+#alias tmux='tmux -2'
+alias gvim='setgo;vim'
 export TERM='screen-256color'
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
-#export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
+export GOPATH="/Users/lmq/golibs"
 #export GOROOT="/usr/local/Cellar/go/1.5.1/libexec"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home"

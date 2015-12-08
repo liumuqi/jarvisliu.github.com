@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
+Plugin 'tmux-plugins/vim-tmux'
 Plugin 'vim-ruby/vim-ruby'
 "自动补全end
 Plugin 'tpope/vim-endwise'

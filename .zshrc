@@ -84,7 +84,9 @@ export LANG=zh_CN.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias tmux='tmux -2'
+PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+alias tmux='tmux -2u'
+alias tc='tmux -2u new-session -s lmq'
 alias gvim='setgo;vim'
 export TERM='screen-256color'
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"

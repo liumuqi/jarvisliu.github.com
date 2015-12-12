@@ -109,6 +109,7 @@ au BufWrite /tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
 syntax on
+syntax enable
 " set mapleader
 let mapleader=","
 
@@ -117,7 +118,8 @@ let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_stl_path_style = 'full'
 "set mouse=v " 设置粘贴和复制
-"set mouse=a
+set mouse=a
+set ttymouse=xterm2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 "=====================================================
 let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
@@ -270,6 +272,8 @@ autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_async =1
 "因为我们放在环境变量里，所以可以直接执行 
 let Tlist_Use_Right_Window=1 "让窗口显示在右边，0的话就是显示在左边  
 let Tlist_Show_One_File=1 "让taglist可以同时展示多个文件的函数列表 
@@ -283,6 +287,13 @@ let Tlist_Inc_Winwidth=1 "不是一直实时更新tags，因为没有必要
 " Cucumber navigation commands
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
 autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd Syntax javascript set syntax=jquery
+
 
 " RSpec.vim mappings
 au FileType rb map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -353,6 +364,7 @@ au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
 "nmap <Space>] <Plug>(quickhl-tag-toggle)
 "map H <Plug>(operator-quickhl-manual-this-motion)
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -360,35 +372,34 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/golibs/bin")
 let g:go_autodetect_gopath = 1
-let gomypath=$GOPATH
+let g:go_oracle_scope= expand('./')
 "let g:go_oracle_scope = expand(gomypath)
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = 'neosnippet'
 let g:go_highlight_build_constraints = 1
-let g:go_quickfix_height = 16
+let g:go_quickfix_height = 10
+let g:syntastic_loc_list_height = 10
 let g:golang_goroot ="/usr/local/go"
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
+"let g:syntastic_go_checkers = ['golint', 'govet', 'goerrcheck']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 "========Syntastic====================
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
+let g:syntastic_auto_jump = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
-
-
-
-
 let g:syntastic_error_symbol='▶'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_enable_highlighting=1
+
 "let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
 "let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 "let g:syntastic_html_checkers=['tidy', 'jshint']
 " 修改高亮的背景色, 适应主题
 highlight SyntasticErrorSign guifg=red guibg=black
 " to see error location list
-let g:syntastic_loc_list_height = 16
 function! CloseScratch() abort
     pc
 endfunction
@@ -472,4 +483,4 @@ hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
 set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif " MacOSX/Linux"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux"

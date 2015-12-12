@@ -1,0 +1,9 @@
+pane	0	1	:vim	1	:*	1	:/Users/lmq/.tmux/tmux-powerline	1	vim	:vim main.go
+pane	lmq	1	:gvim	0	:#-	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	1	:gvim	0	:#-	2	:/Users/lmq	0	zsh	:
+pane	lmq	1	:gvim	0	:#-	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	2	:10022	1	:*	1	:/Users/lmq/.tmux/tmux-powerline	1	ssh	:ssh -p 10022 qishan@10.13.128.221
+window	0	1	1	:*	c0fd,181x45,0,0,0
+window	lmq	1	0	:#-	e35d,272x62,0,0[272x39,0,0,1,272x22,0,40{136x22,0,40,2,135x22,137,40,3}]
+window	lmq	2	1	:*	b961,272x62,0,0,4
+state	lmq	0

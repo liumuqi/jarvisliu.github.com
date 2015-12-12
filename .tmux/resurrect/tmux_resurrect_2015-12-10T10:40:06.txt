@@ -1,0 +1,12 @@
+pane	0	1	:vim	1	:*	1	:/Users/lmq/.tmux/tmux-powerline	1	vim	:vim main.go
+pane	lmq	1	:fg	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	1	:fg	0	:	2	:/Users/lmq	0	zsh	:
+pane	lmq	1	:fg	0	:	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	2	:vim	0	:#-	1	:/Users/lmq/vagrantvms/redis-3.0.5	1	vim	:vim src/redis-trib.rb
+pane	lmq	3	:..e.com/remosis	1	:*	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	3	:..e.com/remosis	1	:*	2	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	zsh	:
+window	0	1	1	:*	c0fd,181x45,0,0,0
+window	lmq	1	0	:	1540,272x62,0,0[272x59,0,0,1,272x2,0,60{135x2,0,60,2,136x2,136,60,3}]
+window	lmq	2	0	:#-	b961,272x62,0,0,4
+window	lmq	3	1	:*	6339,272x62,0,0[272x41,0,0,10,272x20,0,42,13]
+state	lmq	

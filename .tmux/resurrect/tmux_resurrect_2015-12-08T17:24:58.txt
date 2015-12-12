@@ -1,0 +1,5 @@
+pane	lmq	1	:..e.com/remosis	1	:*	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	zsh	:vim main.go
+pane	lmq	1	:..e.com/remosis	1	:*	2	:/Users/lmq	0	ssh	:ssh -p 10022 qishan@10.13.128.221
+pane	lmq	1	:..e.com/remosis	1	:*	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+window	lmq	1	1	:*	ddd0,272x62,0,0[272x51,0,0,1,272x10,0,52{136x10,0,52,2,135x10,137,52,3}]
+state	lmq	

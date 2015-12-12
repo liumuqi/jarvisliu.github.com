@@ -1,0 +1,4 @@
+pane	lmq	1	:top	1	:*	1	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	1	:top	1	:*	2	:	1	zsh	:top
+window	lmq	1	1	:*	1c72,160x42,0,0[160x21,0,0,2,160x20,0,22,3]
+state	lmq	

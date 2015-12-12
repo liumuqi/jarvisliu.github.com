@@ -1,0 +1,4 @@
+pane	lmq	1	:qishan@10.11.2.103	1	:*	1	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	1	:qishan@10.11.2.103	1	:*	2	:/Users/lmq	1	ssh	:ssh qishan@10.11.2.103 -p 10022
+window	lmq	1	1	:*	0c09,272x62,0,0[272x31,0,0,1,272x30,0,32,2]
+state	lmq	

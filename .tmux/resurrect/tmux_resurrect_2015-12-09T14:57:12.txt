@@ -1,0 +1,9 @@
+pane	0	1	:vim	1	:*	1	:/Users/lmq/.tmux/tmux-powerline	1	vim	:vim main.go
+pane	lmq	1	:fg	1	:*	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	1	:fg	1	:*	2	:/Users/lmq	0	zsh	:
+pane	lmq	1	:fg	1	:*	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	2	:~/.vim	0	:-	1	:/Users/lmq/.vim	1	zsh	:
+window	0	1	1	:*	c0fd,181x45,0,0,0
+window	lmq	1	1	:*	8bfe,272x62,0,0[272x49,0,0,1,272x12,0,50{106x12,0,50,2,165x12,107,50,3}]
+window	lmq	2	0	:-	b961,272x62,0,0,4
+state	lmq	0

@@ -1,0 +1,21 @@
+pane	lmq	1	:fg	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	1	:fg	0	:	2	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	1	:fg	0	:	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	1	:fg	0	:	4	:/usr/local	0	zsh	:
+pane	lmq	2	:vim	0	:#-	1	:/Users/lmq/vagrantvms/redis-3.0.5	1	vim	:vim src/redis-trib.rb
+pane	lmq	3	:..s/onlineshell	1	:*	1	:/Users/lmq/Documents/onlineshell	1	zsh	:
+pane	lmq	3	:..s/onlineshell	1	:*	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	4	:../mogujie_code	0	:#	1	:/Users/lmq/Documents/mogujie_code	1	zsh	:
+pane	lmq	5	:../src/test.com	0	:#	1	:/Users/lmq/golibs/src/test.com	1	zsh	:
+pane	lmq	5	:../src/test.com	0	:#	2	:/Users/lmq/golibs/src/test.com	0	zsh	:
+pane	lmq	6	:~/Documents	0	:#	1	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	6	:~/Documents	0	:#	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:#	3	:/Users/lmq	0	zsh	:
+pane	lmq	6	:~/Documents	0	:#	4	:/Users/lmq/Documents	0	zsh	:
+window	lmq	1	0	:	37c1,221x59,0,0[221x56,0,0,2,221x2,0,57{72x2,0,57,3,73x2,73,57,4,74x2,147,57,5}]
+window	lmq	2	0	:#-	d1a3,221x59,0,0,6
+window	lmq	3	1	:*	1cae,221x59,0,0[221x29,0,0,7,221x29,0,30,8]
+window	lmq	4	0	:#	d1a6,221x59,0,0,9
+window	lmq	5	0	:#	cdb6,221x59,0,0[221x56,0,0,10,221x2,0,57,11]
+window	lmq	6	0	:#	3803,221x59,0,0[221x28,0,0,12,221x30,0,29{74x30,0,29,13,72x30,75,29,14,73x30,148,29,15}]
+state	lmq	

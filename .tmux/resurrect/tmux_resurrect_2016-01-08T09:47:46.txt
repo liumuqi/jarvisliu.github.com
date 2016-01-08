@@ -1,0 +1,25 @@
+pane	lmq	1	:gvim	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	1	:gvim	0	:	2	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	1	:gvim	0	:	3	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	0	zsh	:
+pane	lmq	1	:gvim	0	:	4	:/usr/local	0	zsh	:
+pane	lmq	2	:~	0	:	1	:/Users/lmq	1	zsh	:
+pane	lmq	3	:qishan@10.17.31.110	0	:#	1	:/Users/lmq/golibs/src/test.com	0	ssh	:ssh qishan@10.17.31.110 -p 10022
+pane	lmq	3	:qishan@10.17.31.110	0	:#	2	:/Users/lmq/Documents	1	ssh	:ssh qishan@10.17.31.110 -p 10022
+pane	lmq	4	:gvim	0	:#	1	:/Users/lmq/Documents/github/golangs/src/gost	1	vim	:vim main.go
+pane	lmq	4	:gvim	0	:#	2	:/Users/lmq/Documents/github/golangs/src/gor	0	zsh	:
+pane	lmq	5	:fg	0	:-	1	:/Users/lmq/golibs/src/test.com	1	vim	:vim errtest.go
+pane	lmq	5	:fg	0	:-	2	:/Users/lmq/golibs/src/test.com	0	zsh	:
+pane	lmq	6	:~/Documents	0	:#	1	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	7	:~/Documents	1	:*	1	:/Users/lmq/Documents	1	ruby	:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby -W0 /usr/local/Library/brew.rb upgrade
+pane	lmq	7	:~/Documents	1	:*	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	9	:..LaunchDaemons	0	:	1	:/Library/LaunchDaemons	1	zsh	:
+pane	lmq	9	:..LaunchDaemons	0	:	2	:/Users/lmq/Documents/github/python/XX-Net	0	zsh	:
+window	lmq	1	0	:	2429,180x41,0,0[180x36,0,0,1,180x4,0,37{59x4,0,37,2,59x4,60,37,3,60x4,120,37,4}]
+window	lmq	2	0	:	b082,180x41,0,0,5
+window	lmq	3	0	:#	cab6,270x58,0,0[270x20,0,0,7,270x37,0,21,17]
+window	lmq	4	0	:#	5d60,270x58,0,0[270x55,0,0,8,270x2,0,56,18]
+window	lmq	5	0	:-	525e,267x58,0,0[267x47,0,0,9,267x10,0,48,10]
+window	lmq	6	0	:#	6764,270x58,0,0,15
+window	lmq	7	1	:*	1468,267x58,0,0[267x47,0,0,16,267x10,0,48,20]
+window	lmq	9	0	:	19ec,218x59,0,0[218x48,0,0,11,218x10,0,49,12]
+state	lmq	

@@ -99,7 +99,8 @@ export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export GO15VENDOREXPERIMENT=1
 export TESLA_HOME=/Users/lmq/worksoft/tesla-tool
 export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.2.2
-export PATH=/Users/lmq/golibs/bin:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
+export MYRUN=/Users/lmq/shell/
+export PATH=/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 jdk7(){

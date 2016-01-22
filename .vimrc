@@ -118,6 +118,7 @@ let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_stl_path_style = 'full'
 "set mouse=v " 设置粘贴和复制
+set noignorecase
 set mouse=a
 set ttymouse=xterm2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.

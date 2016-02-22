@@ -85,6 +85,7 @@ export LANG=zh_CN.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 alias tmux='tmux -2u'
 alias tc='tmux -2u new-session -s lmq'
 alias gvim='setgo;vim'
@@ -100,15 +101,18 @@ export GO15VENDOREXPERIMENT=1
 export TESLA_HOME=/Users/lmq/worksoft/tesla-tool
 export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.2.2
 export MYRUN=/Users/lmq/shell/
-export PATH=/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
+export PATH=/Users/lmq/bin:/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 jdk7(){
     export PATH=$JAVA7HOME/bin:$PATH
+    export JAVA_HOME=$JAVA7HOME
 }
 jdk8(){
     export PATH=$JAVA8HOME/bin:$PATH
+    export JAVA_HOME=$JAVA8HOME
 }
+jdk7
 setgo(){
     p=$(pwd)
     if [[ $p == *"/src/"* ]] then

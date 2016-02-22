@@ -1,0 +1,43 @@
+pane	lmq	1	:..kparker/delve	0	:	1	:/Users/lmq/vagrantvms/redis-3.0.5	0	zsh	:vim redis.conf
+pane	lmq	1	:..kparker/delve	0	:	2	:/Users/lmq/golibs/src/github.com/derekparker/delve	1	zsh	:
+pane	lmq	2	:vagrant	0	:	1	:/Users/lmq/VirtualBox VMs	1	vagrant	:vim ./src/redis-trib.rb
+vagrant ssh web
+pane	lmq	3	:vim	0	:	1	:/Users/lmq/golibs/src/test.com	1	vim	:vim
+pane	lmq	3	:vim	0	:	2	:/Users/lmq/Documents/mogujie_code/recommender	0	zsh	:
+pane	lmq	3	:vim	0	:	3	:/Users/lmq/Documents/github/other/leetothercode	0	zsh	:
+pane	lmq	4	:higher	0	:	1	:/Users/lmq/VirtualBox VMs	0	vagrant	:vagrant ssh web
+pane	lmq	4	:higher	0	:	2	:/Users/lmq/Documents/github/golangs/redis-go-cluster	1	zsh	:
+pane	lmq	5	:..p/recsys-info	0	:	1	:/Users/lmq/Documents/mogujie_code/dataApp/recsys-info	1	zsh	:
+pane	lmq	5	:..p/recsys-info	0	:	2	:/Users/lmq/Documents/mogujie_code/recommender/hades	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	1	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	3	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	4	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	5	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	6	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	6	:~/Documents	0	:-Z	7	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	1	:/Users/lmq/golibs/src/github.com/derekparker/delve	1	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	3	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	4	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	5	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..kparker/delve	1	:*	6	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:~/Documents	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/hades	1	zsh	:
+pane	lmq	8	:~/Documents	0	:	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:~/Documents	0	:	3	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:~/Documents	0	:	4	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:~/Documents	0	:	5	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:~/Documents	0	:	6	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	9	:..python/XX-Net	0	:	1	:/Users/lmq/Documents/github/python/XX-Net	1	zsh	:/bin/bash ./start.sh
+/bin/bash ./start.sh
+pane	lmq	9	:..python/XX-Net	0	:	2	:/Users/lmq/Documents	0	zsh	:
+window	lmq	1	0	:	9717,267x58,0,0[267x28,0,0,1,267x29,0,29,41]
+window	lmq	2	0	:	d1a3,267x58,0,0,6
+window	lmq	3	0	:	6b27,267x58,0,0[267x37,0,0,7,267x20,0,38{136x20,0,38,8,130x20,137,38,9}]
+window	lmq	4	0	:	5f50,270x58,0,0[270x8,0,0,10,270x49,0,9,30]
+window	lmq	5	0	:	3b60,270x58,0,0[270x45,0,0,12,270x12,0,46,48]
+window	lmq	6	0	:-Z	c43f,236x50,0,0[237x33,0,0{89x33,0,0[89x19,0,0,26,89x13,0,20,45],110x33,90,0,44,36x33,201,0,47},237x18,0,34{79x18,0,34,17,66x18,80,34,46,90x18,147,34,31}]
+window	lmq	7	1	:*	2593,236x50,0,0[236x15,0,0{116x15,0,0,20,119x15,117,0,42},236x15,0,16{116x15,0,16,27,119x15,117,16,29},236x18,0,32{115x18,0,32,28,120x18,116,32,43}]
+window	lmq	8	0	:	2358,270x58,0,0[270x15,0,0{136x15,0,0,21,133x15,137,0,35},270x19,0,16{136x19,0,16,32,133x19,137,16,36},270x22,0,36{136x22,0,36,33,133x22,137,36,34}]
+window	lmq	9	0	:	de5e,270x58,0,0[270x47,0,0,22,270x10,0,48,25]
+state	lmq	

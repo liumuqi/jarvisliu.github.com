@@ -1,0 +1,30 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = qishan
+	email = qishan@mogujie.com
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = yes
+[alias]
+	d = difftool
+    m = mergetool
+[color]
+    diff = auto
+[core]
+	excludesfile = /Users/lmq/.gitignore
+	ignorecase = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = store

@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
+Plugin 'vim-flake8'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'vim-ruby/vim-ruby'
 "自动补全end
@@ -25,7 +26,6 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kshenoy/vim-signature'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'klen/python-mode'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
@@ -123,7 +123,7 @@ set mouse=a
 set ttymouse=xterm2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 "=====================================================
-let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
+let g:EasyGrepMode = 0     " All:0, Open Buffers:1, TrackExt:2,
 "let g:EasyGrepDefaultUserPattern = "*.go *.lua *.conf *.proto"
 let g:EasyGrepCommand = 1  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
@@ -486,3 +486,4 @@ hi Comment ctermfg=6
 set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux"
+set noswapfile

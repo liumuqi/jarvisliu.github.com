@@ -6,7 +6,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="kphoen"
+#ZSH_THEME="kphoen"
+ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git git-flow mvn go golang docker brew jump osx gem)
 
 # User configuration
 
@@ -93,10 +94,10 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 export TERM='screen-256color'
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
 export GOPATH="/Users/lmq/golibs"
-#export GOROOT="/usr/local/Cellar/go/1.5.1/libexec"
+export GOROOT="/usr/local/go"
+export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home"
-export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export GO15VENDOREXPERIMENT=1
 export TESLA_HOME=/Users/lmq/worksoft/tesla-tool
 export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.2.2
@@ -104,6 +105,10 @@ export MYRUN=/Users/lmq/shell/
 export PATH=/Users/lmq/bin:/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+jdk6(){
+    export PATH=$JAVA6HOME/bin:$PATH
+    export JAVA_HOME=$JAVA6HOME
+}
 jdk7(){
     export PATH=$JAVA7HOME/bin:$PATH
     export JAVA_HOME=$JAVA7HOME

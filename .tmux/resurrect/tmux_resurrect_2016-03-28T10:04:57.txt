@@ -1,0 +1,27 @@
+pane	lmq	1	:..leetothercode	0	:	1	:/Users/lmq/Documents/github/other/leetothercode	1	zsh	:
+pane	lmq	2	:..irtualBox VMs	0	:Z	1	:/Users/lmq/VirtualBox VMs	1	zsh	:
+pane	lmq	2	:..irtualBox VMs	0	:Z	2	:/Users/lmq/Documents/github/golangs/go/src	0	vim	:vim cache/lru_cache.go
+pane	lmq	3	:../workpooltest	0	:-Z	1	:/Users/lmq/Documents/github/golangs/src/gost	0	vim	:vim http.go
+pane	lmq	3	:../workpooltest	0	:-Z	2	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo/workpooltest	1	zsh	:
+pane	lmq	4	:..mux/resurrect	1	:*	1	:/Users/lmq/Documents/mogujie_code/moguapp/content-web	0	zsh	:
+pane	lmq	4	:..mux/resurrect	1	:*	2	:/Users/lmq/.vim/.tmux/resurrect	1	zsh	:
+pane	lmq	5	:vim	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	6	:.._code/dataApp	0	:	1	:/Users/lmq/Documents/mogujie_code/dataApp	1	zsh	:
+pane	lmq	7	:~/Documents	0	:	1	:/Users/lmq/Documents/mogujie_code/dataApp/recsys-tools/recsys-data/recsys-data-algo	0	zsh	:
+pane	lmq	7	:~/Documents	0	:	2	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	7	:~/Documents	0	:	3	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:~/Documents	0	:	4	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:..urecommenders	0	:	1	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	8	:..urecommenders	0	:	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:..urecommenders	0	:	3	:/Users/lmq/Documents/mogujie_code/mogurecommenders	0	zsh	:
+pane	lmq	9	:..python/XX-Net	0	:	1	:/Users/lmq/Documents/github/python/XX-Net	1	zsh	:/bin/bash ./start.sh
+window	lmq	1	0	:	d39e,206x59,0,0,1
+window	lmq	2	0	:Z	bf22,206x59,0,0[206x35,0,0,2,206x23,0,36,3]
+window	lmq	3	0	:-Z	f9a7,206x59,0,0[206x46,0,0,4,206x12,0,47,5]
+window	lmq	4	1	:*	90df,206x59,0,0[206x29,0,0,6,206x29,0,30,19]
+window	lmq	5	0	:	bc45,178x43,0,0,8
+window	lmq	6	0	:	bc46,178x43,0,0,9
+window	lmq	7	0	:	5c21,178x43,0,0[178x11,0,0,10,178x16,0,12,11,178x14,0,29{87x14,0,29,12,90x14,88,29,13}]
+window	lmq	8	0	:	0fd6,178x43,0,0[178x28,0,0,14,178x14,0,29{80x14,0,29,15,97x14,81,29,16}]
+window	lmq	9	0	:	6a06,206x59,0,0,17
+state	lmq	

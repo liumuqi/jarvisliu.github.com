@@ -17,16 +17,17 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'thoughtbot/vim-rspec'
 
+Plugin 'Konfekt/FastFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kshenoy/vim-signature'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'Valloric/ListToggle'
+"Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
@@ -36,7 +37,7 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-pathogen'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'asins/vimcdoc'
+"Plugin 'asins/vimcdoc'
 Plugin 'asins/vim-dict'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
@@ -88,7 +89,7 @@ Plugin 'fcitx.vim'
 Plugin 'FencView.vim'
 "Plugin 'FuzzyFinder'
 Plugin 'jsbeautify'
-"Plugin 'L9'
+Plugin 'L9'
 Plugin 'Mark'
 Plugin 'mru.vim'
 Plugin 'restart.vim'
@@ -97,7 +98,7 @@ Plugin 'templates.vim'
 Plugin 'ZenCoding.vim'
 Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
-"Plugin 'hallettj/jslint.vim'
+Plugin 'hallettj/jslint.vim'
 call vundle#end()
 "call pathogen#infect()
 "call pathogen#helptags()
@@ -118,9 +119,6 @@ let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_stl_path_style = 'full'
 "set mouse=v " 设置粘贴和复制
-set noignorecase
-set mouse=a
-set ttymouse=xterm2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 "=====================================================
 let g:EasyGrepMode = 0     " All:0, Open Buffers:1, TrackExt:2,
@@ -325,7 +323,7 @@ map <F2> :NERDTreeToggle<CR>
 nnoremap <F9> :GundoToggle<CR>
 " ###########################MAC 系统 剪切板  ##############################
 vmap <C-f> :w !pbcopy<cr><cr>
-nmap <C-e> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <C-g> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 vmap <C-y> :!pbcopy<cr>
 "####################################################
 map <Leader> <Plug>(easymotion-prefix)
@@ -425,7 +423,12 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
 "===================================================
+set noignorecase
+set mouse=a
+set ttymouse=xterm2
+command W w !sudo tee % > /dev/null
 set grepprg=ack
+set ffs=unix,dos,mac
 set modelines=0		" CVE-2007-2438
 set hls
 set incsearch
@@ -449,6 +452,7 @@ set cursorline "设置光标行线
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set nocp    "设置兼容
 set expandtab   "设置tab
+set smarttab
 set shiftwidth=4    "设置tab的间隔
 set tabstop=4   "四个空格代表一个tab
 set sts=4
@@ -459,6 +463,7 @@ set tw=500
 set lbr
 set number  "设置是否显示行
 "set guifont=Monospace\ 11  "设置字体大小 
+set guifont=Liberation_Mono_for_Powerline:h13
 set encoding=utf-8  "设置编码为utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,GB18030,cp936,big5,euc-jp,euc-kr,latin1

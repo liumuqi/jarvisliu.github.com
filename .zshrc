@@ -51,14 +51,13 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow mvn go golang docker brew jump osx gem)
+plugins=(git git-flow-avh mvn go golang docker brew jump osx gem)
 
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 #export LANG=en_US.UTF-8
@@ -88,10 +87,12 @@ export LANG=zh_CN.UTF-8
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 alias tmux='tmux -2u'
-alias tc='tmux -2u new-session -s lmq'
+alias tc='tmux new-session -s lmq'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
 export TERM='screen-256color'
+
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
 export GOPATH="/Users/lmq/golibs"
 export GOROOT="/usr/local/go"
@@ -127,3 +128,4 @@ setgo(){
         export GOPATH="$(pwd):/Users/lmq/golibs"
     fi
 }
+source $ZSH/oh-my-zsh.sh

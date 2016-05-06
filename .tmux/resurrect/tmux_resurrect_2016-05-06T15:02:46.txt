@@ -1,0 +1,15 @@
+pane	lmq	1	:vim	0	:-	1	:/Users/lmq/Documents/github/other/leetothercode/leetcode2	1	vim	:vim Python/3sum-closest.py
+pane	lmq	2	:..ithub/golangs	1	:*	1	:/Users/lmq/Documents/github/golangs/go/src	1	zsh	:
+pane	lmq	3	:..kparker/delve	0	:	1	:/Users/lmq/golibs/src/golang.org/x	0	zsh	:
+pane	lmq	3	:..kparker/delve	0	:	2	:/Users/lmq/golibs/src/github.com/derekparker/delve	1	zsh	:
+pane	lmq	4	:vim	0	:	1	:/Users/lmq/Documents/mogujie_code/recommender/remosis/agent/src/mogujie.com/remosis	1	vim	:vim main.go
+pane	lmq	7	:..sys-data-algo	0	:	1	:/Users/lmq/Documents/mogujie_code/dataApp/recsys-tools/recsys-data/recsys-data-algo	0	zsh	:
+pane	lmq	7	:..sys-data-algo	0	:	2	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	7	:..sys-data-algo	0	:	3	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	7	:..sys-data-algo	0	:	4	:/Users/lmq/Documents	0	zsh	:
+window	lmq	1	0	:-	d21e,222x59,0,0,1
+window	lmq	2	1	:*	d220,222x59,0,0,3
+window	lmq	3	0	:	9647,222x59,0,0[222x27,0,0,4,222x31,0,28,5]
+window	lmq	4	0	:	d225,222x59,0,0,8
+window	lmq	7	0	:	c531,222x59,0,0[222x17,0,0,10,222x21,0,18,11,222x19,0,40{110x19,0,40,12,111x19,111,40,13}]
+state	lmq	

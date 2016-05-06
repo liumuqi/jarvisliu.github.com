@@ -91,6 +91,7 @@ alias tc='tmux new-session -s lmq'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
+alias ydl='proxychains4 youtube-dl'
 export TERM='screen-256color'
 
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
@@ -106,6 +107,8 @@ export MYRUN=/Users/lmq/shell/
 export PATH=/Users/lmq/bin:/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+#export DOCKER_IP=`boot2docker ip`
+#export DOCKER_HOST=`boot2docker socket`
 jdk6(){
     export PATH=$JAVA6HOME/bin:$PATH
     export JAVA_HOME=$JAVA6HOME

@@ -322,9 +322,9 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 map <F2> :NERDTreeToggle<CR>
 nnoremap <F9> :GundoToggle<CR>
 " ###########################MAC 系统 剪切板  ##############################
-vmap <C-f> :w !pbcopy<cr><cr>
+vmap <C-i> :w !pbcopy<cr><cr>
 nmap <C-g> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-vmap <C-y> :!pbcopy<cr>
+vmap <C-o> :!pbcopy<cr>
 "####################################################
 map <Leader> <Plug>(easymotion-prefix)
 nmap s <Plug>(easymotion-s2)
@@ -355,6 +355,7 @@ au FileType go nmap <Leader>go <Plug>(go-info)
 au FileType go nmap <Leader>ge <Plug>(go-rename)
 au Filetype go nnoremap <leader>vp :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
+"au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
 "nmap <Space>m <Plug>(quickhl-manual-this)
 "xmap <Space>m <Plug>(quickhl-manual-this)
 "nmap <Space>M <Plug>(quickhl-manual-reset)
@@ -372,7 +373,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/golibs/bin")
 let g:go_autodetect_gopath = 1
-let g:go_oracle_scope= expand('./')
+"let g:go_oracle_scope= expand('./')
+let g:go_guru_scope = ["github.com/fatih/structs", "golang.org/x/tools/...", "./"]
 "let g:go_oracle_scope = expand(gomypath)
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = 'neosnippet'
@@ -399,6 +401,10 @@ let g:syntastic_enable_highlighting=1
 "let g:syntastic_html_checkers=['tidy', 'jshint']
 " 修改高亮的背景色, 适应主题
 highlight SyntasticErrorSign guifg=red guibg=black
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 " to see error location list
 function! CloseScratch() abort
     pc
@@ -492,3 +498,4 @@ set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux"
 set noswapfile
+set fillchars+=stl:\ ,stlnc:\

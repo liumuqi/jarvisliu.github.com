@@ -6,8 +6,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="kphoen"
-ZSH_THEME="pygmalion"
+#ZSH_THEME="pygmalion"
+ZSH_THEME="philips"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -132,3 +132,5 @@ setgo(){
     fi
 }
 source $ZSH/oh-my-zsh.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

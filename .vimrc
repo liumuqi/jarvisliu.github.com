@@ -1,4 +1,8 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
 "vim must 7.4
 filetype off
 language messages zh_CN.utf-8
@@ -35,6 +39,7 @@ Plugin 'vim-jp/vim-go-extra'
 Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'idanarye/vim-merginal'
 Plugin 'tpope/vim-pathogen'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'asins/vimcdoc'
@@ -114,7 +119,7 @@ syntax enable
 " set mapleader
 let mapleader=","
 
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_stl_path_style = 'full'
@@ -178,12 +183,12 @@ inoremap <expr><C-c>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
+"  return neocomplete#close_popup() . "\<CR>"
+"  " For no inserting <CR> key.
+"  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+"endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -399,12 +404,24 @@ let g:syntastic_enable_highlighting=1
 "let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
 "let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 "let g:syntastic_html_checkers=['tidy', 'jshint']
+"===========git vimdiff===================================
 " 修改高亮的背景色, 适应主题
 highlight SyntasticErrorSign guifg=red guibg=black
-highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#8CCBEA
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#A4E57E
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#FFDB72
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red   guibg=#FF7272
+
+"hi DiffAdd  ctermbg=Cyan     ctermfg=Black  guibg=#8CCBEA    guifg=Black
+"hi DiffDelete  ctermbg=Green    ctermfg=Black  guibg=#A4E57E    guifg=Black
+"hi DiffChange  ctermbg=Yellow   ctermfg=Black  guibg=#FFDB72    guifg=Black
+"hi DiffText  ctermbg=Red      ctermfg=Black  guibg=#FF7272    guifg=Black
+"hi MarkWord5  ctermbg=Magenta  ctermfg=Black  guibg=#FFB3FF    guifg=Black
+"hi MarkWord6  ctermbg=Blue     ctermfg=Black  guibg=#9999FF    guifg=Black
+
+
+
+
 " to see error location list
 function! CloseScratch() abort
     pc
@@ -422,30 +439,18 @@ nnoremap <Leader>c :call CloseScratch()<cr>
 nnoremap <Leader>sn :lnext<cr>
 nnoremap <Leader>sp :lprevious<cr>
 
-"===========git vimdiff===================================
-" Disable one diff window during a three-way diff allowing you to cut out the
-" noise of a three-way diff and focus on just the changes between two versions
-" at a time. Inspired by Steve Losh's Splice
-function! DiffToggle(window)
-  " Save the cursor position and turn on diff for all windows
-  let l:save_cursor = getpos('.')
-  windo :diffthis
-  " Turn off diff for the specified window (but keep scrollbind) and move
-  " the cursor to the left-most diff window
-  exe a:window . "wincmd w"
-  diffoff
-  set scrollbind
-  set cursorbind
-  exe a:window . "wincmd " . (a:window == 1 ? "l" : "h")
-  " Update the diff and restore the cursor position
-  diffupdate
-  call setpos('.', l:save_cursor)
+function! DiffToggle()
+    if &diff
+        diffoff
+    else
+        diffthis
+    endif
 endfunction
-" Toggle diff view on the left, center, or right windows
-nmap <silent> <leader>dl :call DiffToggle(1)<cr>
-nmap <silent> <leader>dc :call DiffToggle(2)<cr>
-nmap <silent> <leader>dr :call DiffToggle(3)<cr>
 
+nnoremap <silent> <Leader>dl :diffget local<CR>
+nnoremap <silent> <Leader>db :diffget base<CR>
+nnoremap <silent> <Leader>dr :diffget remote<CR>
+nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 "=======================nerdtree=====================
 " Globals
 " NERDTree width
@@ -464,7 +469,9 @@ set modelines=0		" CVE-2007-2438
 set hls
 set incsearch
 set ic
-set wrap
+set tw=85
+set textwidth=80
+set wrap linebreak nolist
 set backspace=2 " more powerful backspacing
 set list lcs=tab:\|\ 
 "1. manual //手工定义折叠
@@ -490,7 +497,6 @@ set sts=4
 set showmatch   "在输入括号时光标会短暂地跳到与之相匹配的括号处
 set autoindent  "设置自动缩进
 set smartindent "设置智能缩进
-set tw=500
 set lbr
 set number  "设置是否显示行
 "set guifont=Monospace\ 11  "设置字体大小 
@@ -524,3 +530,14 @@ set completeopt=menuone,menu,longest,preview
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux"
 set noswapfile
 set fillchars+=stl:\ ,stlnc:\
+"=========set c env===========
+set exrc
+set secure
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
+let &path.="./,./src/,./include,./src/include,/usr/include/AL,"
+set includeexpr=substitute(v:fname,'\\.','/','g')

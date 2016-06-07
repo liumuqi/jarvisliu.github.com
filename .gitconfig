@@ -12,8 +12,8 @@
 [alias]
 	d = difftool
     m = mergetool
-    lg = log --pretty=format:"%h%x09%an%x09%ad%x09%s" --author-date-order --abbrev-commit --graph --decorate
-    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) -%an%C(reset)- %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all
+    lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)'
+    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all
 [color]
     diff = auto
 	ui = true
@@ -22,8 +22,10 @@
 	ignorecase = false
 	editor = vim
 [merge]
-	tool = diffconflicts
+	tool = vimdiff
 	conflictstyle = diff3
+	commit = no
+	ff = no
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -34,8 +36,5 @@
 	helper = store
 [pull]
 	rebase = true
-[mergetool "diffconflicts"]
-	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = true
 [mergetool]
 	keepBackup = false

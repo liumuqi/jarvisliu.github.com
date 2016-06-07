@@ -1,0 +1,21 @@
+pane	lmq	1	:fg	0	:	1	:/Users/lmq/Documents/github/other/leetothercode/leetcode2	1	vim	:vim Python/add-and-search-word-data-structure-design.py
+pane	lmq	2	:..leetothercode	0	:-	1	:/Users/lmq/Documents/github/other/leetothercode	1	zsh	:
+pane	lmq	3	:vim	0	:	1	:/Users/lmq/Documents/github/golangs/src/serve	1	vim	:vim serve.go
+pane	lmq	4	:..src/invokeCgo	1	:*	1	:/Users/lmq/golibs/src/invokeCgo	1	zsh	:
+pane	lmq	4	:..src/invokeCgo	1	:*	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	5	:workpool	0	:	1	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo	1	vim	:vim workpooltest/main.go
+pane	lmq	6	:~/Documents	0	:	1	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	7	:..ub/c/giflossy	0	:Z	1	:/Users/lmq/Documents/mogujie_code/moguapp/mogu_server	0	zsh	:
+pane	lmq	7	:..ub/c/giflossy	0	:Z	2	:/Users/lmq/Documents/github/c/giflossy	1	zsh	:
+pane	lmq	8	:..rc/person.com	0	:	1	:/Users/lmq/golibs/src/person.com	1	zsh	:
+pane	lmq	9	:~/Documents	0	:	1	:/Users/lmq/Documents	1	zsh	:
+window	lmq	1	0	:	b1fe,164x41,0,0,1
+window	lmq	2	0	:-	bc3f,178x43,0,0,2
+window	lmq	3	0	:	c100,181x45,0,0,3
+window	lmq	4	1	:*	2641,160x41,0,0[160x22,0,0,4,160x18,0,23,11]
+window	lmq	5	0	:	c102,181x45,0,0,5
+window	lmq	6	0	:	c103,181x45,0,0,6
+window	lmq	7	0	:Z	2fc2,181x45,0,0[181x23,0,0,7,181x21,0,24,8]
+window	lmq	8	0	:	b406,160x42,0,0,9
+window	lmq	9	0	:	5a2f,160x42,0,0,10
+state	lmq	

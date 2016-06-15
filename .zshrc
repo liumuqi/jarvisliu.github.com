@@ -53,6 +53,95 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-flow-avh mvn go golang docker brew jump osx gem)
 
+
+
+
+bindkey -v
+bindkey "^?" backward-delete-char
+bindkey -M vicmd "^R" redo
+bindkey -M vicmd "u" undo
+bindkey -M vicmd "ga" what-cursor-position
+bindkey -M viins '^p' history-beginning-search-backward
+bindkey -M vicmd '^p' history-beginning-search-backward
+bindkey -M viins '^n' history-beginning-search-forward
+bindkey -M vicmd '^n' history-beginning-search-forward
+
+zle -N edit-command-line
+bindkey -M vicmd "v" edit-command-line
+
+# ..() Switch to parent directory by matching on partial name {{{1
+# Usage:
+# cd /usr/share/doc/zsh
+# .. s      # cd's to /usr/share
+
+function .. () {
+    (( $# == 0 )) && { cd .. && return }
+    local match_idx
+    local -a parents matching_parents new_path
+    parents=( ${(s:/:)PWD} )
+    matching_parents=( ${(M)${parents[1,-2]}:#"${1}"*} )
+    if (( ${#matching_parents} )); then
+        match_idx=${parents[(i)${matching_parents[-1]}]}
+        new_path=( ${parents[1,${match_idx}]} )
+
+        cd "/${(j:/:)new_path}"
+        return $?
+    fi
+    return 1
+}
+
+# {{{ genpass()
+# Generates a tough password of a given length
+
+function genpass() {
+    if [ ! "$1" ]; then
+        echo "Usage: $0 20"
+        echo "For a random, 20-character password."
+        return 1
+    fi
+    dd if=/dev/urandom count=1 2>/dev/null | tr -cd 'A-Za-z0-9!@#$%^&*()_+' | cut -c-$1
+}
+
+
+# }}}
+# Output total memory currently in use by you {{{1
+
+memtotaller() {
+    /bin/ps -u $(whoami) -o pid,rss,command | awk '{sum+=$2} END {print "Total " sum / 1024 " MB"}'
+}
+
+
+# }}}
+# xssh {{{1
+# Paralelize running shell commands through ssh on multiple hosts with xargs
+#
+# Usage:
+#   echo uptime | xssh host1 host2 host3
+#
+# Usage:
+#   xssh host1 host2 host3
+#   # prompts for commands; ctrl-d to finish
+#   free -m | awk '/^-/ { print $4, "MB" }'
+#   uptime
+#   ^d
+
+function xssh() {
+    local HOSTS="${argv}"
+    [[ -n "${HOSTS}" ]] || return 1
+
+    local tmpfile="/tmp/xssh.cmd.$$.$RANDOM"
+    trap 'rm -f '$tmpfile SIGINT SIGTERM EXIT
+
+    # Grab the command(s) from stdin and write to tmpfile
+    cat - > ${tmpfile}
+
+    # Execute up to 5 ssh processes at a time and pipe tmpfile to the stdin of
+    # the remote shell
+    echo -n "${HOSTS[@]}" | xargs -d" " -P5 -IHOST \
+        sh -c 'ssh -T HOST < '${tmpfile}' | sed -e "s/^/HOST: /g"'
+}
+
+
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -84,13 +173,20 @@ export LANG=zh_CN.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#alias urlencode='python -c "import urllib2, sys; print urllib2.quote(sys.stdin.read().encode(\"utf8\"))"'
+#alias urldecode='python -c "import urllib2, sys; print urllib2.unquote(sys.stdin.read().encode(\"utf8\"))"'
+
+
+
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 alias tmux='tmux -2u'
 alias tc='tmux new-session -s lmq'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
+#alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
+alias fetchall='find . -type d -name .git -print0 | xargs -r -0 -I@ git --git-dir=@ fetch -a'
 alias ydl='proxychains4 youtube-dl'
 export TERM='screen-256color'
 

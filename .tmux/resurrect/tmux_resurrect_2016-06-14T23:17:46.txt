@@ -1,0 +1,13 @@
+pane	lmq	1	:vim	0	:	1	:/Users/lmq/Documents/github/other/leetothercode/leetcode2	1	vim	:vim Python/add-and-search-word-data-structure-design.py
+pane	lmq	2	:..leetothercode	0	:	1	:/Users/lmq/Documents/github/other/leetothercode	1	zsh	:
+pane	lmq	3	:vim	0	:	1	:/Users/lmq/Documents/github/golangs/src/serve	1	vim	:vim serve.go
+pane	lmq	4	:gvim	0	:-	1	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo/workpooltest	1	vim	:vim main.go
+pane	lmq	5	:vim	0	:	1	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo	1	vim	:vim workpooltest/main.go
+pane	lmq	6	:..movie/youtube	1	:*	1	:/Users/lmq/Downloads/movie/youtube	1	zsh	:
+window	lmq	1	0	:	d0de,210x59,0,0,1
+window	lmq	2	0	:	d0df,210x59,0,0,2
+window	lmq	3	0	:	d0e0,210x59,0,0,3
+window	lmq	4	0	:-	b841,151x43,0,0,4
+window	lmq	5	0	:	cea3,204x58,0,0,6
+window	lmq	6	1	:*	5c55,151x43,0,0,16
+state	lmq	

@@ -13,7 +13,9 @@
 	d = difftool
     m = mergetool
     lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)'
+    lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --first-parent
     lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all
+    lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all --first-parent
 [color]
     diff = auto
 	ui = true

@@ -1,0 +1,23 @@
+pane	lmq	1	:vim	0	:-	1	:/Users/lmq/Documents/github/other/leetothercode/leetcode2	1	vim	:vim Python/add-and-search-word-data-structure-design.py
+pane	lmq	2	:vim	0	:	1	:/Users/lmq/golibs/src/test.com	1	vim	:vim protocol.go
+pane	lmq	3	:~/Documents	0	:	1	:/Users/lmq/Documents/github/golangs/src/serve	1	vim	:vim serve.go
+pane	lmq	4	:vim	0	:	1	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo/workpooltest	1	vim	:vim main.go
+pane	lmq	5	:../persongo.com	0	:	1	:/Users/lmq/golibs/src/persongo.com	1	zsh	:
+pane	lmq	6	:..p/mogu_server	0	:	1	:/Users/lmq/Documents/mogujie_code/moguapp/mogu_server	0	zsh	:
+pane	lmq	6	:..p/mogu_server	0	:	2	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	7	:vim	0	:	1	:/Users/lmq/Documents/github/javas/myblog/code/akka-examples	1	vim	:vim echo-server-java8/src/main/java/com/github/zxh/akka/echoserver/Main.java
+pane	lmq	8	:..p/mogu_server	0	:Z	1	:/Users/lmq/Documents/mogujie_code/moguapp/mogu_server	0	zsh	:
+pane	lmq	8	:..p/mogu_server	0	:Z	2	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	8	:..p/mogu_server	0	:Z	3	:/Users/lmq/Documents/mogujie_code/moguapp/mogu_server	1	zsh	:
+pane	lmq	8	:..p/mogu_server	0	:Z	4	:/Users/lmq/Documents	0	zsh	:
+pane	lmq	9	:so	1	:*	1	:/Users/lmq/Documents	1	bash	:/bin/bash /Users/lmq/bin/so
+window	lmq	1	0	:-	cf1e,224x58,0,0,1
+window	lmq	2	0	:	d1df,239x58,0,0,2
+window	lmq	3	0	:	ce20,222x58,0,0,3
+window	lmq	4	0	:	ce21,222x58,0,0,4
+window	lmq	5	0	:	67c8,224x58,0,0,19
+window	lmq	6	0	:	1b67,239x59,0,0[239x29,0,0,8,239x29,0,30,23]
+window	lmq	7	0	:	b963,272x62,0,0,6
+window	lmq	8	0	:Z	9db6,239x58,0,0[239x29,0,0{119x29,0,0,12,119x29,120,0,22},239x28,0,30{119x28,0,30,20,119x28,120,30,21}]
+window	lmq	9	1	:*	e7c6,224x58,0,0,27
+state	lmq	

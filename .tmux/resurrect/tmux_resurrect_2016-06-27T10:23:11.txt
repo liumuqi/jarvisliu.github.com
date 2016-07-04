@@ -1,0 +1,9 @@
+pane	lmq	1	:fg	0	:	1	:/Users/lmq/Documents/github/other/leetothercode/leetcode2	1	vim	:vim Python/add-binary.py
+pane	lmq	2	:~/Documents	1	:*	1	:/Users/lmq/Documents	1	zsh	:
+pane	lmq	3	:server	0	:	1	:/Users/lmq/Documents/github/golangs/src/serve	1	vim	:vim serve.go
+pane	lmq	4	:workpool	0	:-	1	:/Users/lmq/Documents/github/golangs/src/github.com/goinggo/workpooltest	1	vim	:vim main.go
+window	lmq	1	0	:	b95e,272x62,0,0,1
+window	lmq	2	1	:*	5ce0,272x62,0,0,11
+window	lmq	3	0	:	b960,272x62,0,0,3
+window	lmq	4	0	:-	b961,272x62,0,0,4
+state	lmq	

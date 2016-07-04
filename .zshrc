@@ -185,8 +185,9 @@ alias tmux='tmux -2u'
 alias tc='tmux new-session -s lmq'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-#alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
+alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
 alias fetchall='find . -type d -name .git -print0 | xargs -r -0 -I@ git --git-dir=@ fetch -a'
+alias t='/usr/bin/time -f "%Uu %Ss %er %MkB %C"'
 alias ydl='proxychains4 youtube-dl'
 export TERM='screen-256color'
 

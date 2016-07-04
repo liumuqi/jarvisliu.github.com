@@ -25,8 +25,8 @@ Plugin 'Konfekt/FastFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
+"Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
+"Plugin 'nsf/gocode', {'rtp': 'vim/'}
 "Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kshenoy/vim-signature'
@@ -40,9 +40,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'idanarye/vim-merginal'
-Plugin 'tpope/vim-pathogen'
+"Plugin 'tpope/vim-pathogen'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'asins/vimcdoc'
+Plugin 'a.vim'
 Plugin 'asins/vim-dict'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
@@ -104,11 +105,48 @@ Plugin 'ZenCoding.vim'
 Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
 Plugin 'hallettj/jslint.vim'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 call vundle#end()
 "call pathogen#infect()
 "call pathogen#helptags()
 filetype plugin indent on
 filetype plugin on
+
+"proto语法文件
+ augroup filetype
+   au! BufRead,BufNewFile *.proto setfiletype proto
+ augroup end
+
+"恢复上次光标位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+"启动界面
+set shortmess=atI
+"                                   mac os map
+if has('mac') && ($TERM == 'xterm-256color' || $TERM == 'screen-256color')
+map <Esc>OP <F1>
+map <Esc>OQ <F2>
+map <Esc>OR <F3>
+map <Esc>OS <F4>
+map <Esc>[16~ <F5>
+map <Esc>[17~ <F6>
+map <Esc>[18~ <F7>
+map <Esc>[19~ <F8>
+map <Esc>[20~ <F9>
+map <Esc>[21~ <F10>
+map <Esc>[23~ <F11>
+map <Esc>[24~ <F12>
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+
+
 
 au BufWrite /private/tmp/crontab.* set nowritebackup
 au BufWrite /tmp/crontab.* set nowritebackup
@@ -275,9 +313,22 @@ endif
 autocmd BufWritePre *.go :Fmt
 " =================================进行Taglist的设置<Begin>============================
 nmap <F3> :TagbarToggle<CR>
+"                             ctags
+"
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_dynamic_files = 1
+let g:easytags_events = ['BufWritePost']
 let g:easytags_async =1
+let g:easytags_always_enabled = 1
+let g:easytags_auto_highlight = 1
+let g:easytags_syntax_keyword = 'always'
+let g:easytags_on_cursorhold = 1
+let g:easytags_include_members = 1
+highlight link cMember Special
+highlight cMember gui=italic
+let g:easytags_resolve_links = 1
 "因为我们放在环境变量里，所以可以直接执行 
 let Tlist_Use_Right_Window=1 "让窗口显示在右边，0的话就是显示在左边  
 let Tlist_Show_One_File=1 "让taglist可以同时展示多个文件的函数列表 
@@ -358,6 +409,15 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gi <Plug>(go-implements)
 au FileType go nmap <Leader>go <Plug>(go-info)
 au FileType go nmap <Leader>ge <Plug>(go-rename)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+let g:go_term_mode = "split"
+let g:go_term_enabled = 1
 au Filetype go nnoremap <leader>vp :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
 "au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
@@ -379,34 +439,127 @@ let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/golibs/bin")
 let g:go_autodetect_gopath = 1
 "let g:go_oracle_scope= expand('./')
-let g:go_guru_scope = ["golang.org/x/tools/...", "./"]
+let g:go_guru_scope = ["golang.org/x/tools/...", "./","/usr/local/go/src/"]
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,abs:/Developer/usr/clang-ide/lib/c++/v1,abs:/usr/local/include,abs:/usr/include/'
 "let g:go_oracle_scope = expand(gomypath)
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = 'neosnippet'
 let g:go_highlight_build_constraints = 1
 let g:go_quickfix_height = 10
+
+
+"========Syntastic====================
+"                                 错误检查
+"let g:syntastic_cpp_include_dirs = ['/usr/include/']
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+"whether to show balloons
+let g:syntastic_enable_balloons = 1
+
+"安装flake8: easy_install flake8
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_loc_list_height = 10
 let g:golang_goroot ="/usr/local/go"
-"let g:syntastic_go_checkers = ['golint', 'govet', 'goerrcheck']
-let g:syntastic_go_checkers = ['go', 'golint', 'govet']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
-"========Syntastic====================
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_auto_jump = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_error_symbol='▶'
+"set error or warning signs
+let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_enable_highlighting=1
-
 "let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
 "let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 "let g:syntastic_html_checkers=['tidy', 'jshint']
+highlight SyntasticErrorSign guifg=red guibg=black
+"================================================================
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"pyclewn
+ let g:pyclewn_args="--terminal=TERMINAL --window=bottom"
+ autocmd BufRead *.c* map <F5>  :TagbarClose<CR> :Pyclewn<CR> :call StartDebug()<CR> :call StartDebugC()<CR> 
+ autocmd BufRead *.py map <F5>  :TagbarClose<CR> :Pyclewn pdb %:p<CR> :call StartDebug()<CR> :call StartDebugPy()<CR>
+ autocmd BufRead *.py nmap <F6> :!python %<CR> 
+ autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+ autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+ map <F4>  :nbclose<CR> <C-j>wc :call StopDebug()<CR>
+ func! StartDebug()
+ map <S-b> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
+ map <S-e> :exe "Cclear " . expand("%:p") . ":" . line(".")<CR>
+ map <S-u> :exe "Cup "<CR>
+ map <S-d> :exe "Cdown "<CR>
+ map <S-n> :exe "Cnext "<CR>
+ map <S-c> :exe "Ccontinue "<CR>
+ map <S-s> :exe "Cstep "<CR>
+ map <S-f> :exe "Cfinish "<CR>
+ map <S-w> :exe "Cwhere "<CR>
+ map <S-l> :exe "Cinfo locals "<CR>
+ map <S-t> :exe "Cinfo break "<CR>
+ map <S-x> :exe "Cfoldvar " . line(".")<CR>
+ endfunc
+
+ func! StartDebugC()
+    map <S-z> :exe "Csigint "<CR>
+    map <S-a> :exe "Cinfo args "<CR>
+    map <S-r> :exe "Crun "<CR>
+    map <S-p> :exe "Cprint " . expand("<cword>") <CR>
+    map <S-q> :exe "Cquit "<CR>
+ endfunc
+ func! StartDebugPy()
+    map <S-z> :exe "Cinterrupt "<CR>
+    map <S-a> :exe "Cargs "<CR>
+    map <S-r> :exe "Creturn "<CR>
+    map <S-p> :exe "Cp " . expand("<cword>") <CR>
+    map <S-q> :exe "Cquit "<CR> <C-j>wc
+ endfunc
+
+ func! StopDebug()
+ unmap <S-b>
+ unmap <S-e>
+ unmap <S-u>
+ unmap <S-d>
+ unmap <S-n>
+ unmap <S-c>
+ unmap <S-s>
+ unmap <S-f>
+ unmap <S-w>
+ unmap <S-l>
+ unmap <S-t>
+ unmap <S-x>
+ unmap <S-z>
+ unmap <S-a>
+ unmap <S-r>
+ unmap <S-p>
+ unmap <S-q>
+ endfunc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"								DoxygenToolkit
+"
+let g:DoxygenToolkit_authorName="qishan"
+let g:DoxygenToolkit_briefTag_pre="@brief  " 
+let g:DoxygenToolkit_paramTag_pre="@Param " 
+let g:DoxygenToolkit_returnTag="@Returns   " 
+map <C-a> :DoxAuthor<CR>
+map <C-s> :Dox<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+
 "===========git vimdiff===================================
 " 修改高亮的背景色, 适应主题
-highlight SyntasticErrorSign guifg=red guibg=black
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#8CCBEA
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#A4E57E
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red   guibg=#FFDB72
@@ -418,9 +571,6 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 "hi DiffText  ctermbg=Red      ctermfg=Black  guibg=#FF7272    guifg=Black
 "hi MarkWord5  ctermbg=Magenta  ctermfg=Black  guibg=#FFB3FF    guifg=Black
 "hi MarkWord6  ctermbg=Blue     ctermfg=Black  guibg=#9999FF    guifg=Black
-
-
-
 
 " to see error location list
 function! CloseScratch() abort
@@ -454,12 +604,16 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 "=======================nerdtree=====================
 " Globals
 " NERDTree width
-let g:NERDTreeWinSize = 45
-let NERDTreeShowHidden=1
+let g:NERDTreeWinSize = 35
+let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
+"忽略文件、隐藏文件
+ let NERDTreeIgnore = ['\.pyc$']
+ let NERDTreeSortOrder=['\/$', 'Makefile', 'makefile', '*', '\~$']
 "===================================================
 set noignorecase
+set smartcase
 set mouse=a
 set ttymouse=xterm2
 command W w !sudo tee % > /dev/null
@@ -525,7 +679,7 @@ set guioptions+=T
 set guioptions+=m
 hi Comment ctermfg=6
 "gf 命令 go file 到该文件去
-set path+=expand("~/golibs")
+"set path+=expand("~/golibs")
 set completeopt=menuone,menu,longest,preview
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux"
 set noswapfile

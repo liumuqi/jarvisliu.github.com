@@ -176,32 +176,37 @@ export LANG=zh_CN.UTF-8
 
 #alias urlencode='python -c "import urllib2, sys; print urllib2.quote(sys.stdin.read().encode(\"utf8\"))"'
 #alias urldecode='python -c "import urllib2, sys; print urllib2.unquote(sys.stdin.read().encode(\"utf8\"))"'
+alias urlencode='python -c "import urllib2, sys; print urllib2.quote(sys.argv[1].encode(\"utf8\"))"'
+alias urldecode='python -c "import urllib2, sys; print urllib2.unquote(sys.argv[1].encode(\"utf8\"))"'
+
 
 
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 alias tmux='tmux -2u'
-alias tc='tmux new-session -s lmq'
+alias tc='tmux new-session -s qishan'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
-alias fetchall='find . -type d -name .git -print0 | xargs -r -0 -I@ git --git-dir=@ fetch -a'
+#alias fetchall='find . -type d -name .git -print0 | xargs -r -0 -I@ git --git-dir=@ fetch -a'
+alias fetchall='find . -type d -name .git -print0 | xargs  -0 -I@ git --git-dir=@ fetch -a'
 alias t='/usr/bin/time -f "%Uu %Ss %er %MkB %C"'
 alias ydl='proxychains4 youtube-dl'
+alias csc='cscope -Rbkq'
+alias mctags='ctags -R'
 export TERM='screen-256color'
 
-#export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
-export GOPATH="/Users/lmq/golibs"
+#export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
+export GOPATH="/Users/qishan/golibs"
 export GOROOT="/usr/local/go"
 export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
-export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home"
+export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
 export GO15VENDOREXPERIMENT=1
-export TESLA_HOME=/Users/lmq/worksoft/tesla-tool
-export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.2.2
-export MYRUN=/Users/lmq/shell/
-export PATH=/Users/lmq/bin:/Users/lmq/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
+export  MAVEN_HOME=/Users/qishan/worksoft/apache-maven-3.3.9
+export MYRUN=/Users/qishan/shell/
+export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 #export DOCKER_IP=`boot2docker ip`
@@ -218,16 +223,20 @@ jdk8(){
     export PATH=$JAVA8HOME/bin:$PATH
     export JAVA_HOME=$JAVA8HOME
 }
-jdk7
+jdk8
 setgo(){
     p=$(pwd)
     if [[ $p == *"/src/"* ]] then
         #index=
-        export GOPATH="${p/%src*/}:/Users/lmq/golibs"
+        export GOPATH="${p/%src*/}:/Users/qishan/golibs"
     else
-        export GOPATH="$(pwd):/Users/lmq/golibs"
+        export GOPATH="$(pwd):/Users/qishan/golibs"
     fi
 }
 source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/qishan/.sdkman"
+[[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"

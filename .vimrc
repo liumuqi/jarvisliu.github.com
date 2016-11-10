@@ -169,7 +169,7 @@ let g:EasyGrepMode = 0     " All:0, Open Buffers:1, TrackExt:2,
 let g:EasyGrepCommand = 1  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
 let g:EasyGrepIgnoreCase = 0 " not ignorecase:0
-let g:EasyGrepFilesToExclude = "*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak, *.log"
+let g:EasyGrepFilesToExclude = "tags,*.bak, *~, cscope.*, *.a, *.o, *.pyc, *.bak, *.log"
 nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
@@ -467,8 +467,8 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_auto_jump = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_auto_jump = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
 "set error or warning signs
@@ -658,6 +658,7 @@ set guifont=Liberation_Mono_for_Powerline:h13
 set encoding=utf-8  "设置编码为utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,GB18030,cp936,big5,euc-jp,euc-kr,latin1
+set fencs=utf-8,GB18030,gbk
 set helplang=cn "帮助中文支持
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

@@ -3,8 +3,8 @@
 	smudge = git-lfs smudge %f
 	required = true
 [user]
-	name = qishan
-	email = qishan@mogujie.com
+	name = muqi.lmq
+	email = muqi.lmq@autonavi.com
 [diff]
 	tool = vimdiff
 [difftool]
@@ -21,7 +21,7 @@
     diff = auto
 	ui = true
 [core]
-	excludesfile = /Users/lmq/.gitignore
+	excludesfile = /Users/qishan/.gitignore_global
 	ignorecase = false
 	editor = vim
 [merge]
@@ -36,7 +36,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [credential]
-	helper = store
+	helper = osxkeychain
 [pull]
 	rebase = true
 [mergetool]

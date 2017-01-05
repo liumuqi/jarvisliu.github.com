@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow-avh mvn go golang docker brew jump osx gem)
+plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn)
 
 
 
@@ -209,6 +209,7 @@ export MYRUN=/Users/qishan/shell/
 export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export SSLKEYLOGFILE=/Users/qishan/.tls/sslkeylog.log
 #export DOCKER_IP=`boot2docker ip`
 #export DOCKER_HOST=`boot2docker socket`
 jdk6(){

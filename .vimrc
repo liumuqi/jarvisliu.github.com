@@ -1,10 +1,10 @@
 "before checkout git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-augroup project
-    autocmd!
-    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-augroup END
+"augroup project
+    "autocmd!
+    "autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+"augroup END
 "vim must 7.4
-filetype off
+"filetype off
 language messages zh_CN.utf-8
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,18 +13,18 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
-Plugin 'vim-flake8'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'vim-ruby/vim-ruby'
+"Plugin 'vim-flake8'
+"Plugin 'tmux-plugins/vim-tmux'
+"Plugin 'vim-ruby/vim-ruby'
 "自动补全end
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
+"Plugin 'tpope/vim-rails'
+"Plugin 'thoughtbot/vim-rspec'
 
 Plugin 'Konfekt/FastFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
-Bundle 'rizzatti/funcoo.vim'
+"Bundle 'rizzatti/funcoo.vim'
 "Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/golibs/src/github.com/nsf/gocode/vim/symlink.sh'  }
 "Plugin 'nsf/gocode', {'rtp': 'vim/'}
 "Plugin 'sjl/gundo.vim'
@@ -39,12 +39,11 @@ Plugin 'vim-jp/vim-go-extra'
 Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'idanarye/vim-merginal'
-"Plugin 'tpope/vim-pathogen'
+"Plugin 'idanarye/vim-merginal'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'asins/vimcdoc'
 Plugin 'a.vim'
-Plugin 'asins/vim-dict'
+"Plugin 'asins/vim-dict'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
 Bundle 'Shougo/neosnippet'
@@ -56,7 +55,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'asins/vim-colors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular' "必须先在vim-markdown前面
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 Plugin 'gregsexton/gitv'
 "..................................
 " vim-scripts repos
@@ -69,11 +68,11 @@ Plugin 'EasyGrep'
 "
 " vim-scripts repos
 " Syntax
-Plugin 'asciidoc.vim'
-Plugin 'confluencewiki.vim'
+"Plugin 'asciidoc.vim'
+"Plugin 'confluencewiki.vim'
 Plugin 'JavaScript-syntax'
-Plugin 'mako.vim'
-Plugin 'moin.vim'
+"Plugin 'mako.vim'
+"Plugin 'moin.vim'
 " Color
 Plugin 'desert256.vim'
 Plugin 'fatih/molokai'
@@ -90,8 +89,8 @@ Plugin 'mako.vim--Torborg'
 " Plugin
 Plugin 'AutoClose--Alves'
 Plugin 'auto_mkdir'
-Plugin 'cecutil'
-Plugin 'fcitx.vim'
+"Plugin 'cecutil'
+"Plugin 'fcitx.vim'
 Plugin 'FencView.vim'
 "Plugin 'FuzzyFinder'
 Plugin 'jsbeautify'
@@ -140,11 +139,6 @@ map <Esc>[23~ <F11>
 map <Esc>[24~ <F12>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
 
 
 
@@ -340,21 +334,8 @@ let Tlist_Inc_Winwidth=1 "不是一直实时更新tags，因为没有必要
 
 
 " Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd Syntax javascript set syntax=jquery
 
-
-" RSpec.vim mappings
-au FileType rb map <Leader>t :call RunCurrentSpecFile()<CR>
-au FileType rb map <Leader>s :call RunNearestSpec()<CR>
-au FileType rb map <Leader>l :call RunLastSpec()<CR>
-au FileType rb map <Leader>a :call RunAllSpecs()<CR>
 
 " =================================进行Taglist的设置<End>==============================
 hi MarkWord1  ctermbg=Cyan     ctermfg=Black  guibg=#8CCBEA    guifg=Black
@@ -430,7 +411,7 @@ au Filetype go nnoremap <leader>sp :sp <CR>:exe "GoDef"<CR>
 "nmap <Space>] <Plug>(quickhl-tag-toggle)
 "map H <Plug>(operator-quickhl-manual-this-motion)
 let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
+let g:go_fmt_fail_silently = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -439,7 +420,8 @@ let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/golibs/bin")
 let g:go_autodetect_gopath = 1
 "let g:go_oracle_scope= expand('./')
-let g:go_guru_scope = ["golang.org/x/tools/...", "./","/usr/local/go/src/"]
+"let g:go_guru_scope = ["./","/usr/local/go/src/","golang.org/x/tools/..."]
+let g:go_guru_scope = ["./","/Users/qishan/golibs/src/","/usr/local/go/src/"]
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,abs:/Developer/usr/clang-ide/lib/c++/v1,abs:/usr/local/include,abs:/usr/include/'
 "let g:go_oracle_scope = expand(gomypath)
 let g:go_auto_type_info = 1
@@ -462,8 +444,11 @@ let g:syntastic_enable_balloons = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_loc_list_height = 10
+
 let g:golang_goroot ="/usr/local/go"
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck','GoErrCheck']
+let g:go_list_type = "quickfix"
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0

@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn)
+plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn go golang)
 
 
 
@@ -212,6 +212,8 @@ export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export SSLKEYLOGFILE=/Users/qishan/.tls/sslkeylog.log
 #export DOCKER_IP=`boot2docker ip`
 #export DOCKER_HOST=`boot2docker socket`
+export SH=/Users/qishan/Documents/code/alibaba/gitlab/shell/code_effect
+export PATH=$SH:$PATH
 jdk6(){
     export PATH=$JAVA6HOME/bin:$PATH
     export JAVA_HOME=$JAVA6HOME
@@ -241,3 +243,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
+export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
+export PATH="/usr/local/opt/protobuf@2.6/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN="d98a9978a83ffee6c4e89ccf306bf0b4bb0a3262"

@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
-"Plugin 'vim-flake8'
+Plugin 'vim-flake8'
 "Plugin 'tmux-plugins/vim-tmux'
 "Plugin 'vim-ruby/vim-ruby'
 "自动补全end
@@ -21,7 +21,7 @@ Plugin 'tpope/vim-endwise'
 "Plugin 'tpope/vim-rails'
 "Plugin 'thoughtbot/vim-rspec'
 
-Plugin 'Konfekt/FastFold'
+"Plugin 'Konfekt/FastFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 "Bundle 'rizzatti/funcoo.vim'
@@ -43,7 +43,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'asins/vimcdoc'
 Plugin 'a.vim'
-"Plugin 'asins/vim-dict'
+Plugin 'asins/vim-dict'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
 Bundle 'Shougo/neosnippet'
@@ -52,7 +52,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'matchit.zip' " 通过%跳转配对代码
 Plugin 'Yggdroot/indentLine'
 Plugin 'majutsushi/tagbar'
-Plugin 'asins/vim-colors'
+"Plugin 'asins/vim-colors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular' "必须先在vim-markdown前面
 "Plugin 'plasticboy/vim-markdown'
@@ -62,7 +62,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'vcscommand.vim'
 "Plugin 'SudoEdit.vim'
 Plugin 'EasyGrep'
-"Plugin 'VimIM'
+Plugin 'VimIM'
 "......................................
 " My Plugins here:
 "
@@ -70,11 +70,11 @@ Plugin 'EasyGrep'
 " Syntax
 "Plugin 'asciidoc.vim'
 "Plugin 'confluencewiki.vim'
-Plugin 'JavaScript-syntax'
-"Plugin 'mako.vim'
-"Plugin 'moin.vim'
+"Plugin 'JavaScript-syntax'
+Plugin 'mako.vim'
+Plugin 'moin.vim'
 " Color
-Plugin 'desert256.vim'
+"Plugin 'desert256.vim'
 Plugin 'fatih/molokai'
 Plugin 'Impact'
 Plugin 'matrix.vim'
@@ -82,28 +82,28 @@ Plugin 'vibrantink'
 Plugin 'vividchalk.vim'
 " Ftplugin
 " Indent
-Plugin 'othree/html5.vim'
+"Plugin 'othree/html5.vim'
 Plugin 'IndentAnything'
-Plugin 'Javascript-Indentation'
+"Plugin 'Javascript-Indentation'
 Plugin 'mako.vim--Torborg'
 " Plugin
 Plugin 'AutoClose--Alves'
-Plugin 'auto_mkdir'
-"Plugin 'cecutil'
+"Plugin 'auto_mkdir'
+Plugin 'cecutil'
 "Plugin 'fcitx.vim'
-Plugin 'FencView.vim'
+"Plugin 'FencView.vim'
 "Plugin 'FuzzyFinder'
-Plugin 'jsbeautify'
+"Plugin 'jsbeautify'
 Plugin 'L9'
 Plugin 'Mark'
 Plugin 'mru.vim'
 Plugin 'restart.vim'
-Plugin 'templates.vim'
+"Plugin 'templates.vim'
 "Plugin 'vimim.vim'
-Plugin 'ZenCoding.vim'
-Plugin 'css_color.vim'
+"Plugin 'ZenCoding.vim'
+"Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
-Plugin 'hallettj/jslint.vim'
+"Plugin 'hallettj/jslint.vim'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 call vundle#end()
@@ -336,7 +336,6 @@ let Tlist_Inc_Winwidth=1 "不是一直实时更新tags，因为没有必要
 " Cucumber navigation commands
 autocmd Syntax javascript set syntax=jquery
 
-
 " =================================进行Taglist的设置<End>==============================
 hi MarkWord1  ctermbg=Cyan     ctermfg=Black  guibg=#8CCBEA    guifg=Black
 hi MarkWord2  ctermbg=Green    ctermfg=Black  guibg=#A4E57E    guifg=Black
@@ -466,82 +465,7 @@ let g:syntastic_enable_highlighting=1
 highlight SyntasticErrorSign guifg=red guibg=black
 "================================================================
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"pyclewn
- let g:pyclewn_args="--terminal=TERMINAL --window=bottom"
- autocmd BufRead *.c* map <F5>  :TagbarClose<CR> :Pyclewn<CR> :call StartDebug()<CR> :call StartDebugC()<CR> 
- autocmd BufRead *.py map <F5>  :TagbarClose<CR> :Pyclewn pdb %:p<CR> :call StartDebug()<CR> :call StartDebugPy()<CR>
- autocmd BufRead *.py nmap <F6> :!python %<CR> 
- autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
- autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
- map <F4>  :nbclose<CR> <C-j>wc :call StopDebug()<CR>
- func! StartDebug()
- map <S-b> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
- map <S-e> :exe "Cclear " . expand("%:p") . ":" . line(".")<CR>
- map <S-u> :exe "Cup "<CR>
- map <S-d> :exe "Cdown "<CR>
- map <S-n> :exe "Cnext "<CR>
- map <S-c> :exe "Ccontinue "<CR>
- map <S-s> :exe "Cstep "<CR>
- map <S-f> :exe "Cfinish "<CR>
- map <S-w> :exe "Cwhere "<CR>
- map <S-l> :exe "Cinfo locals "<CR>
- map <S-t> :exe "Cinfo break "<CR>
- map <S-x> :exe "Cfoldvar " . line(".")<CR>
- endfunc
-
- func! StartDebugC()
-    map <S-z> :exe "Csigint "<CR>
-    map <S-a> :exe "Cinfo args "<CR>
-    map <S-r> :exe "Crun "<CR>
-    map <S-p> :exe "Cprint " . expand("<cword>") <CR>
-    map <S-q> :exe "Cquit "<CR>
- endfunc
- func! StartDebugPy()
-    map <S-z> :exe "Cinterrupt "<CR>
-    map <S-a> :exe "Cargs "<CR>
-    map <S-r> :exe "Creturn "<CR>
-    map <S-p> :exe "Cp " . expand("<cword>") <CR>
-    map <S-q> :exe "Cquit "<CR> <C-j>wc
- endfunc
-
- func! StopDebug()
- unmap <S-b>
- unmap <S-e>
- unmap <S-u>
- unmap <S-d>
- unmap <S-n>
- unmap <S-c>
- unmap <S-s>
- unmap <S-f>
- unmap <S-w>
- unmap <S-l>
- unmap <S-t>
- unmap <S-x>
- unmap <S-z>
- unmap <S-a>
- unmap <S-r>
- unmap <S-p>
- unmap <S-q>
- endfunc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"								DoxygenToolkit
-"
-let g:DoxygenToolkit_authorName="qishan"
-let g:DoxygenToolkit_briefTag_pre="@brief  " 
-let g:DoxygenToolkit_paramTag_pre="@Param " 
-let g:DoxygenToolkit_returnTag="@Returns   " 
-map <C-a> :DoxAuthor<CR>
-map <C-s> :Dox<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 "===========git vimdiff===================================
 " 修改高亮的背景色, 适应主题
@@ -610,7 +534,9 @@ set incsearch
 set ic
 set tw=85
 set textwidth=80
-set wrap linebreak nolist
+set wrap 
+set linebreak 
+set nolist
 set backspace=2 " more powerful backspacing
 set list lcs=tab:\|\ 
 "1. manual //手工定义折叠
@@ -653,7 +579,6 @@ colorscheme molokai
 " Display extra whitespace
 set list listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 set laststatus=2   " Always show the statusline
-
 iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 set nocompatible "Use Vim defaults instead of 100% vi compatibility
 set iskeyword+=_,$,@,%,#,-
@@ -681,3 +606,5 @@ augroup project
 augroup END
 let &path.="./,./src/,./include,./src/include,/usr/include/AL,"
 set includeexpr=substitute(v:fname,'\\.','/','g')
+"设置visual block select colors
+hi Visual term=reverse cterm=reverse guibg=Grey

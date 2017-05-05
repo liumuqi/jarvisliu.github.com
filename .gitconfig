@@ -6,16 +6,16 @@
 	name = muqi.lmq
 	email = muqi.lmq@autonavi.com
 [diff]
-	tool = vimdiff
+    tool = meld
 [difftool]
-	prompt = yes
+    prompt = false
 [alias]
+    c = commit
     st = status
 	d = difftool
-    m = mergetool
     lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)'
     lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --first-parent
-    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all
+    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all --simplify-by-decoration
     lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) - ''%C(white)%s%C(reset) %C(dim white)' --all --first-parent
 [color]
     diff = auto
@@ -23,21 +23,24 @@
 [core]
 	excludesfile = /Users/qishan/.gitignore_global
 	ignorecase = false
-	editor = vim
+	;editor = vim
 [merge]
-	tool = vimdiff
+	tool = meld
 	conflictstyle = diff3
 	commit = no
 	ff = no
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    log = true
+;[difftool "sourcetree"]
+	;cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	;path = 
+;[mergetool "sourcetree"]
+	;cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	;trustExitCode = true
 [credential]
 	helper = osxkeychain
 [pull]
 	rebase = true
-[mergetool]
-	keepBackup = false
+;[mergetool]
+	;keepBackup = false
+[grep]
+	patternType = perl

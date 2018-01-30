@@ -6,17 +6,18 @@
 	name = muqi.lmq
 	email = muqi.lmq@autonavi.com
 [diff]
-    tool = meld
+    ;tool = kdiff3
+    tool = sourcetree
 [difftool]
     prompt = false
 [alias]
     c = commit
     st = status
 	d = difftool
-    lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)'
-    lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --first-parent
-    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --all ;--simplify-by-decoration
-    lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --all --first-parent
+    lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --author='^((?!aone).*)$'
+    lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --first-parent --author='^((?!aone).*)$'
+    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --all --author='^((?!aone).*)$';--simplify-by-decoration
+    lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --all --first-parent --author='^((?!aone).*)$'
 [color]
     diff = auto
 	ui = true
@@ -25,7 +26,8 @@
 	ignorecase = false
 	;editor = vim
 [merge]
-	tool = meld
+    ;tool = kdiff3
+    tool = sourcetree
 	conflictstyle = diff3
 	commit = no
 	ff = no
@@ -50,3 +52,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/qishan/.stCommitMsg

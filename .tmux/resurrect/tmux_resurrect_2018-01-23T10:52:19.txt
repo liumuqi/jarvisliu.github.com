@@ -1,0 +1,11 @@
+pane	qishan	1	:local	1	:*	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	2	:work	0	:Z	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	2	:work	0	:Z	2	:/Users/qishan/.vim/.tmux	0	zsh	:
+pane	qishan	3	:test	0	:-	1	:/Users/qishan/Documents/code/github	1	zsh	:
+pane	qishan	4	:online	0	:	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	4	:online	0	:	2	:/Users/qishan/.vim/.tmux	0	zsh	:
+window	qishan	1	1	:*	d25d,251x59,0,0,0
+window	qishan	2	0	:Z	ce50,251x59,0,0[251x29,0,0,1,251x29,0,30,5]
+window	qishan	3	0	:-	d25f,251x59,0,0,2
+window	qishan	4	0	:	3ad4,251x59,0,0[251x19,0,0,3,251x39,0,20,4]
+state	qishan	

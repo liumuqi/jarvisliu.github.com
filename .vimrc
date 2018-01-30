@@ -36,7 +36,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-quickhl'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-jp/vim-go-extra'
-Plugin 'mileszs/ack.vim'
+"brew install the_silver_searcher
+"Plugin 'mileszs/ack.vim'
+Plugin 'brookhong/ag.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'idanarye/vim-merginal'
@@ -526,7 +528,7 @@ set smartcase
 set mouse=a
 set ttymouse=xterm2
 command W w !sudo tee % > /dev/null
-set grepprg=ack
+set grepprg=ag
 set ffs=unix,dos,mac
 set modelines=0		" CVE-2007-2438
 set hls

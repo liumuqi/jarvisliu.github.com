@@ -1,0 +1,9 @@
+pane	qishan	1	:local	1	:*	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	2	:work	0	:	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	3	:test	0	:	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+pane	qishan	4	:online	0	:-	1	:/Users/qishan/.vim/.tmux	1	zsh	:
+window	qishan	1	1	:*	cfdd,254x58,0,0,0
+window	qishan	2	0	:	cfde,254x58,0,0,1
+window	qishan	3	0	:	cfdf,254x58,0,0,2
+window	qishan	4	0	:-	cfe0,254x58,0,0,3
+state	qishan	

@@ -536,7 +536,7 @@ set incsearch
 set ic
 set tw=85
 set textwidth=80
-set wrap 
+"set nowrap 
 set linebreak 
 set nolist
 set backspace=2 " more powerful backspacing

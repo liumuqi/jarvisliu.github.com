@@ -14,10 +14,12 @@
     c = commit
     st = status
 	d = difftool
-    lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --author='^((?!aone).*)$'
-    lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --first-parent --author='^((?!aone).*)$'
-    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --all --author='^((?!aone).*)$';--simplify-by-decoration
-    lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --all --first-parent --author='^((?!aone).*)$'
+    ;lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --author='^((?!aone).*)$'
+    lg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit  --format=format:'%C(bold cyan)%ai[%ci]%C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) - %C(reset)%C(bold yellow)%d%C(reset)' --author='^((?!aone).*)$'
+    lpg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --first-parent --author='^((?!aone).*)$'
+    lsg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold yellow)%d%C(reset) ' --all --author='^((?!aone).*)$';--simplify-by-decoration
+    lspg = log --graph --abbrev-commit --decorate --author-date-order --abbrev-commit --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --all --first-parent --author='^((?!aone).*)$'
+    rl = reflog --pretty=reflog
 [color]
     diff = auto
 	ui = true
@@ -41,7 +43,7 @@
 [credential]
 	helper = osxkeychain
 [pull]
-	rebase = true
+    rebase = true
 ;[mergetool]
 	;keepBackup = false
 [grep]
@@ -54,3 +56,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/qishan/.stCommitMsg
+[pretty]
+    reflog = %C(auto)%h %<|(20)%gd %C(red)%cr%C(reset) %gs (%s)

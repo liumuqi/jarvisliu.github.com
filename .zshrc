@@ -198,7 +198,7 @@ export TERM='screen-256color'
 
 #export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
 export GOPATH="/Users/qishan/golibs"
-export GOROOT="/usr/local/go"
+export GOROOT="/usr/local/Cellar/go/1.10.3/libexec"
 export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
@@ -246,3 +246,18 @@ export SDKMAN_DIR="/Users/qishan/.sdkman"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 export PATH="/usr/local/opt/protobuf@2.6/bin:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN="5e7cae7260e6837d342ac012900840e012ada247"
+
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi

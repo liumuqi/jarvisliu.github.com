@@ -202,12 +202,13 @@ export GOROOT="/usr/local/Cellar/go/1.10.3/libexec"
 export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
+export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 export GO15VENDOREXPERIMENT=1
 export  MAVEN_HOME=/Users/qishan/worksoft/apache-maven-3.3.9
 export MYRUN=/Users/qishan/shell/
 export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export SSLKEYLOGFILE=/Users/qishan/.tls/sslkeylog.log
 #export DOCKER_IP=`boot2docker ip`
 #export DOCKER_HOST=`boot2docker socket`
@@ -226,6 +227,11 @@ jdk8(){
     export PATH=$JAVA8HOME/bin:$PATH
     export JAVA_HOME=$JAVA8HOME
 }
+jdk10(){
+    export PATH=$JAVA10HOME/bin:$PATH
+    export JAVA_HOME=$JAVA10HOME
+}
+
 jdk8
 setgo(){
     p=$(pwd)
@@ -245,7 +251,7 @@ export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 export PATH="/usr/local/opt/protobuf@2.6/bin:$PATH"
-export HOMEBREW_GITHUB_API_TOKEN="5e7cae7260e6837d342ac012900840e012ada247"
+export HOMEBREW_GITHUB_API_TOKEN="ddd6d3098d87c38256c054972ce73182bea79ba5"
 
 function exists { which $1 &> /dev/null }
 

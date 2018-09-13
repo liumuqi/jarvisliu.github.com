@@ -267,3 +267,4 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
+export PATH="/usr/local/opt/openssl/bin:$PATH"

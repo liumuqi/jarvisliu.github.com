@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn go golang)
+plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn go golang rust)
 
 
 
@@ -194,11 +194,13 @@ alias t='/usr/bin/time -f "%Uu %Ss %er %MkB %C"'
 alias ydl='proxychains4 youtube-dl'
 alias csc='cscope -Rbkq'
 alias mctags='ctags -R'
+alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
+alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
 export TERM='screen-256color'
 
 #export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
 export GOPATH="/Users/qishan/golibs"
-export GOROOT="/usr/local/Cellar/go/1.10.3/libexec"
+export GOROOT="/usr/local/Cellar/go/1.11.2/libexec"
 export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
@@ -250,8 +252,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
-export PATH="/usr/local/opt/protobuf@2.6/bin:$PATH"
-export HOMEBREW_GITHUB_API_TOKEN="ddd6d3098d87c38256c054972ce73182bea79ba5"
+export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
+export HOMEBREW_GITHUB_API_TOKEN="bde377fefced10b0eec3bcca1a549a810175dcbb"
 
 function exists { which $1 &> /dev/null }
 
@@ -267,4 +269,12 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH=/usr/local/opt/openssl/bin:$PATH
+
+export PATH=~/.cargo/bin:$PATH
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+#export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+# 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing

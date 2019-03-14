@@ -45,7 +45,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'asins/vimcdoc'
 Plugin 'a.vim'
-Plugin 'asins/vim-dict'
+"Plugin 'asins/vim-dict'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
 Bundle 'Shougo/neosnippet'
@@ -59,6 +59,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular' "必须先在vim-markdown前面
 "Plugin 'plasticboy/vim-markdown'
 Plugin 'gregsexton/gitv'
+Plugin 'rust-lang/rust.vim'
 "..................................
 " vim-scripts repos
 Plugin 'vcscommand.vim'

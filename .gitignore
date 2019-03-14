@@ -37,3 +37,8 @@ cache/git
 #systemignore
 .DS_Store
 Thumbs.db
+
+#vscode
+.vscode
+.vscode/
+.factorypath

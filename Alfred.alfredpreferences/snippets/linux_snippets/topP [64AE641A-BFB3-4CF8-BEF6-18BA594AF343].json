@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\\n\",$1,$2,$3)}'",
+    "uid" : "64AE641A-BFB3-4CF8-BEF6-18BA594AF343",
+    "name" : "topP",
+    "keyword" : "topc"
+  }
+}

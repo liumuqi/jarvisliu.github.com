@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "git rev-list --all |xargs  git grep ",
+    "uid" : "7BA649E5-C3EB-4E0C-B9DD-BBBCE4C4D5CC",
+    "name" : "ggrep",
+    "keyword" : "grep"
+  }
+}

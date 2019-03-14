@@ -1,0 +1,76 @@
+{
+  "_from": "alfred-google-translate",
+  "_id": "alfred-google-translate@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-xzacMMtAyJTpIVzRh6P4jIlekYo4EntobHrmAH9iOCBRhtkohrP5ilhMwoElHashX2fR/YOnS12KCWaGzJXLbA==",
+  "_location": "/alfred-google-translate",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "alfred-google-translate",
+    "name": "alfred-google-translate",
+    "escapedName": "alfred-google-translate",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/alfred-google-translate/-/alfred-google-translate-1.0.0.tgz",
+  "_shasum": "6666f1ad214fc3640b16392548f298e3baa8526e",
+  "_spec": "alfred-google-translate",
+  "_where": "/Users/qishan/Documents/code/alibaba/gitlab/javas/sentinel",
+  "author": {
+    "name": "hanwen.huang",
+    "email": "xfslove@gmail.com",
+    "url": "https://github.com/xfslove/alfred-google-translate"
+  },
+  "bugs": {
+    "url": "https://github.com/xfslove/alfred-google-translate/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "alfy": "^0.6.0",
+    "global-tunnel-ng": "^2.1.0",
+    "google-translate-api": "^2.3.0",
+    "is-chinese": "^1.2.5"
+  },
+  "deprecated": false,
+  "description": "Alfred 3 workflow to translate between zh-cn and en with google tanslate api",
+  "devDependencies": {
+    "alfy-test": "^0.3.0",
+    "ava": "*",
+    "xo": "*"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "homepage": "https://github.com/xfslove/alfred-google-translate#readme",
+  "keywords": [
+    "translate",
+    "google-translate",
+    "alfred",
+    "alfred-workflow",
+    "workflow",
+    "alfy"
+  ],
+  "license": "MIT",
+  "name": "alfred-google-translate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfslove/alfred-google-translate.git"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup",
+    "test": "xo && ava"
+  },
+  "version": "1.0.0"
+}

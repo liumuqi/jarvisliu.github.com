@@ -1,0 +1,7 @@
+pane	qishan	1	:local	1	:*	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	lua	:lua
+pane	qishan	2	:online	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab	1	zsh	:
+pane	qishan	3	:test	0	:	1	:/Users/qishan/Downloads	1	zsh	:
+window	qishan	1	1	:*	afe1,250x60,0,0,4
+window	qishan	2	0	:-	afdf,250x60,0,0,2
+window	qishan	3	0	:	afe0,250x60,0,0,3
+state	qishan	

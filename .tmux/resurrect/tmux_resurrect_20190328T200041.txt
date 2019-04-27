@@ -1,0 +1,15 @@
+pane	qishan	1	:local	0	:-	1	:/Users/qishan/tmp/wrks	0	watch	:watch -n 0.01 curl localhost:8718/tree
+pane	qishan	1	:local	0	:-	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/test/out/artifacts	0	zsh	:
+pane	qishan	1	:local	0	:-	3	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/test/out/artifacts	0	zsh	:
+pane	qishan	1	:local	0	:-	4	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/test/out/artifacts	1	zsh	:
+pane	qishan	2	:online	1	:*	1	:/Users/qishan/tmp/wrks	0	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
+pane	qishan	2	:online	1	:*	2	:/Users/qishan/tmp/wrks	0	zsh	:
+pane	qishan	2	:online	1	:*	3	:/Users/qishan/tmp/wrks	1	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
+pane	qishan	3	:test	0	:Z	1	:/Users/qishan/tmp/wrks	1	zsh	:
+pane	qishan	3	:test	0	:Z	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/event-history	0	zsh	:
+pane	qishan	3	:test	0	:Z	3	:/Users/qishan/tmp/wrks	0	zsh	:
+pane	qishan	3	:test	0	:Z	4	:/Users/qishan/tmp/wrks	0	zsh	:
+window	qishan	1	0	:-	38b0,267x60,0,0[267x26,0,0,11,267x33,0,27{89x33,0,27,17,88x33,90,27,21,88x33,179,27,20}]
+window	qishan	2	1	:*	90d9,267x60,0,0[267x25,0,0{126x25,0,0,7,140x25,127,0,22},267x34,0,26,16]
+window	qishan	3	0	:Z	f209,267x60,0,0[267x30,0,0{132x30,0,0,9,134x30,133,0,13},267x29,0,31{132x29,0,31,12,134x29,133,31,14}]
+state	qishan	

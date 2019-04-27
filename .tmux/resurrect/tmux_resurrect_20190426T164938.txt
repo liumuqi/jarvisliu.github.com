@@ -1,0 +1,3 @@
+pane	qishan	1	:local	1	:*	1	:/Users/qishan/Documents/code/github	1	zsh	:
+window	qishan	1	1	:*	bcfe,181x44,0,0,1
+state	qishan	

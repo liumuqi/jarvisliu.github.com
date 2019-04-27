@@ -1,0 +1,10 @@
+pane	qishan	1	:local	0	:	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	zsh	:
+pane	qishan	2	:local	1	:*Z	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-ugc	0	zsh	:
+pane	qishan	2	:local	1	:*Z	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-ugc	0	zsh	:
+pane	qishan	2	:local	1	:*Z	3	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-ugc	0	zsh	:
+pane	qishan	2	:local	1	:*Z	4	:/Users/qishan/Documents/code/github/deep/rusts_open/minigrep	1	zsh	:
+pane	qishan	3	:test	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/dohko_backend	1	zsh	:
+window	qishan	1	0	:	d55e,238x59,0,0,1
+window	qishan	2	1	:*Z	4717,238x59,0,0[238x29,0,0{119x29,0,0,2,118x29,120,0,6},238x29,0,30{101x29,0,30,4,136x29,102,30,5}]
+window	qishan	3	0	:-	d560,238x59,0,0,3
+state	qishan	

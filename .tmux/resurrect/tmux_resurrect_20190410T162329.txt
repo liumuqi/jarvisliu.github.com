@@ -1,0 +1,8 @@
+pane	qishan	1	:local	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	lua	:lua
+pane	qishan	2	:online	1	:*	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	ssh	:ssh hbasedev
+pane	qishan	3	:test	0	:	1	:/Users/qishan/Documents/code/github/rusts/linkerd2-proxy	0	zsh	:
+pane	qishan	3	:test	0	:	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/flow/flow-history	1	zsh	:
+window	qishan	1	0	:-	afe1,250x60,0,0,4
+window	qishan	2	1	:*	afdf,250x60,0,0,2
+window	qishan	3	0	:	1cac,250x60,0,0[250x21,0,0,3,250x38,0,22,5]
+state	qishan	

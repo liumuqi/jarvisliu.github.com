@@ -1,0 +1,12 @@
+pane	qishan	1	:local	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/event-history	1	zsh	:
+pane	qishan	2	:online	1	:*Z	1	:/Users/qishan/tmp/wrks	0	zsh	:
+pane	qishan	2	:online	1	:*Z	2	:/Users/qishan	1	zsh	:
+pane	qishan	2	:online	1	:*Z	3	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/test/out/artifacts	0	zsh	:
+pane	qishan	3	:test	0	:Z	1	:/Users/qishan/tmp/wrks	1	zsh	:
+pane	qishan	3	:test	0	:Z	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/event-history	0	zsh	:
+pane	qishan	3	:test	0	:Z	3	:/Users/qishan/tmp/wrks	0	zsh	:
+pane	qishan	3	:test	0	:Z	4	:/Users/qishan/tmp/wrks	0	zsh	:
+window	qishan	1	0	:-	58a0,271x60,0,0,11
+window	qishan	2	1	:*Z	2d9e,183x45,0,0[183x18,0,0{83x18,0,0,7,99x18,84,0,22},183x26,0,19,16]
+window	qishan	3	0	:Z	f209,267x60,0,0[267x30,0,0{132x30,0,0,9,134x30,133,0,13},267x29,0,31{132x29,0,31,12,134x29,133,31,14}]
+state	qishan	

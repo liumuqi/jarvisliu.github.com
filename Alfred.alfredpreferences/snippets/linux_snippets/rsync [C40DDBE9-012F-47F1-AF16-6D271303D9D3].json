@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "rsync -av --exclude \".git\" --exclude=\".idea\" --exclude=\"target\/\"",
+    "uid" : "C40DDBE9-012F-47F1-AF16-6D271303D9D3",
+    "name" : "rsync",
+    "keyword" : "rsync"
+  }
+}

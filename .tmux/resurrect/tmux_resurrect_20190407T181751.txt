@@ -1,7 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:	1	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
-pane	qishan	2	:online	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-scheduler	1	zsh	:
-pane	qishan	3	:test	0	:	1	:	1	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
-window	qishan	1	1	:*	6b50,197x59,0,0,11
-window	qishan	2	0	:-	eb51,197x59,0,0,22
-window	qishan	3	0	:	6b53,197x59,0,0,14
-state	qishan	

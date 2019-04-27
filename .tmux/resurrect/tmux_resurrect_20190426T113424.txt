@@ -1,3 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/usr/local/Cellar/mysql/8.0.15/support-files	1	zsh	:
-window	qishan	1	1	:*	bcfe,181x44,0,0,1
-state	qishan	

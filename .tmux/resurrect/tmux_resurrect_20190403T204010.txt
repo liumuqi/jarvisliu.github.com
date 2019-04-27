@@ -1,8 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/qishan/Documents/code/github	1	zsh	:
-pane	qishan	2	:online	0	:-	1	:/Users/qishan	1	zsh	:
-pane	qishan	3	:test	0	:Z	1	:/Users/qishan/tmp/wrks	0	zsh	:
-pane	qishan	3	:test	0	:Z	2	:/Users/qishan/Documents/code/github/rusts/linkerd2-proxy	1	ssh	:ssh hbasedev
-window	qishan	1	1	:*	6b50,197x59,0,0,11
-window	qishan	2	0	:-	eb51,197x59,0,0,22
-window	qishan	3	0	:Z	daa3,216x60,0,0[216x31,0,0,9,216x28,0,32,14]
-state	qishan	

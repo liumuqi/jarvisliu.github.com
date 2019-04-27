@@ -1,8 +1,0 @@
-pane	qishan	1	:local	0	:	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	zsh	:
-pane	qishan	2	:online	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/traffic-base-platform	1	lua	:lua
-pane	qishan	3	:test	1	:*	1	:/Users/qishan/Documents/code/github	1	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
-pane	qishan	3	:test	1	:*	2	:/Users/qishan/Documents/code/github	0	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
-window	qishan	1	0	:	b021,260x60,0,0,4
-window	qishan	2	0	:-	b01f,260x60,0,0,2
-window	qishan	3	1	:*	063c,260x60,0,0[260x20,0,0,3,260x39,0,21,5]
-state	qishan	

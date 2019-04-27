@@ -1,8 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:	1	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
-pane	qishan	2	:online	1	:*	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer	1	zsh	:
-pane	qishan	3	:test	0	:Z	1	:/Users/qishan/tmp/wrks	0	zsh	:
-pane	qishan	3	:test	0	:Z	2	:/Users/qishan/Documents/code/github/rusts/linkerd2-proxy	1	zsh	:
-window	qishan	1	0	:-	5920,216x60,0,0,11
-window	qishan	2	1	:*	deb1,181x44,0,0,22
-window	qishan	3	0	:Z	daa3,216x60,0,0[216x31,0,0,9,216x28,0,32,14]
-state	qishan	

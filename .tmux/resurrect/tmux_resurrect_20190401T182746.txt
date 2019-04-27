@@ -1,8 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/event/event-history	1	zsh	:
-pane	qishan	2	:online	0	:	1	:/Users/qishan	1	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
-pane	qishan	3	:test	1	:*	1	:/Users/qishan/tmp/wrks	1	ruby	:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby -W0 /usr/local/Homebrew/Library/Homebrew/brew.rb upgrade
-pane	qishan	3	:test	1	:*	2	:/Users/qishan/tmp/wrks	0	zsh	:
-window	qishan	1	0	:-	6b50,197x59,0,0,11
-window	qishan	2	0	:	d921,216x60,0,0,22
-window	qishan	3	1	:*	daa3,216x60,0,0[216x31,0,0,9,216x28,0,32,14]
-state	qishan	

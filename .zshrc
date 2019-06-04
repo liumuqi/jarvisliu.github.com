@@ -184,6 +184,8 @@ alias urldecode='python -c "import urllib2, sys; print urllib2.unquote(sys.argv[
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+alias ls='lsd -l'
+alias ll='lsd -l'
 alias tmux='tmux -2u'
 alias tc='tmux new-session -s qishan'
 alias gvim='setgo;vim'
@@ -253,7 +255,7 @@ export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN="bde377fefced10b0eec3bcca1a549a810175dcbb"
+export HOMEBREW_GITHUB_API_TOKEN="160f484064c937d8be5f366e4edde09d7f6bb7b4"
 
 function exists { which $1 &> /dev/null }
 

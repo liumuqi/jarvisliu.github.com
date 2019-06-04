@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "netstat -n | awk '\/^tcp\/ {++S[$NF]} END {for(a in S) print a, S[a]}'",
+    "uid" : "C0756B2E-ECE6-4F92-B2F4-B2255EDFA6F1",
+    "name" : "tcp_st",
+    "keyword" : "tcpst"
+  }
+}

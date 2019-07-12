@@ -1,5 +1,6 @@
 #mavenignore
 target/
+out/
 application.pid
 *.jar
 *.war

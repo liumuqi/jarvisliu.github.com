@@ -198,16 +198,17 @@ alias csc='cscope -Rbkq'
 alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
+alias java_home='/usr/libexec/java_home'
 export TERM='screen-256color'
 
 #export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
 export GOPATH="/Users/qishan/golibs"
-export GOROOT="/usr/local/Cellar/go/1.11.2/libexec"
-export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
-export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
-export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
-export GO15VENDOREXPERIMENT=1
+#export GOROOT="/usr/local/Cellar/go/1.12.6/libexec"
+#export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+#export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
+#export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
+#export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
+#export GO15VENDOREXPERIMENT=1
 export  MAVEN_HOME=/Users/qishan/worksoft/apache-maven-3.3.9
 export MYRUN=/Users/qishan/shell/
 export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
@@ -219,24 +220,31 @@ export SSLKEYLOGFILE=/Users/qishan/.tls/sslkeylog.log
 export SH=/Users/qishan/Documents/code/alibaba/gitlab/shell/code_effect
 export odpscmd=/Users/qishan/Documents/code/alibaba/tools/odps_clt_release_64/bin
 export PATH=$odpscmd:$SH:$PATH
-jdk6(){
-    export PATH=$JAVA6HOME/bin:$PATH
-    export JAVA_HOME=$JAVA6HOME
-}
-jdk7(){
-    export PATH=$JAVA7HOME/bin:$PATH
-    export JAVA_HOME=$JAVA7HOME
-}
-jdk8(){
-    export PATH=$JAVA8HOME/bin:$PATH
-    export JAVA_HOME=$JAVA8HOME
-}
-jdk10(){
-    export PATH=$JAVA10HOME/bin:$PATH
-    export JAVA_HOME=$JAVA10HOME
-}
+#alias commands to enable easy setting of JDK version
+alias setJDK7='export JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
+alias setJDK8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8`'
+alias setJDK10='export JAVA_HOME=`/usr/libexec/java_home -v 10`'
+# set to the default JDK
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#
+#jdk6(){
+    #export PATH=$JAVA6HOME/bin:$PATH
+    #export JAVA_HOME=$JAVA6HOME
+#}
+#jdk7(){
+    #export PATH=$JAVA7HOME/bin:$PATH
+    #export JAVA_HOME=$JAVA7HOME
+#}
+#jdk8(){
+    #export PATH=$JAVA8HOME/bin:$PATH
+    #export JAVA_HOME=$JAVA8HOME
+#}
+#jdk10(){
+    #export PATH=$JAVA10HOME/bin:$PATH
+    #export JAVA_HOME=$JAVA10HOME
+#}
 
-jdk8
+#jdk8
 setgo(){
     p=$(pwd)
     if [[ $p == *"/src/"* ]] then
@@ -254,8 +262,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
-export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN="160f484064c937d8be5f366e4edde09d7f6bb7b4"
+#export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
+export HOMEBREW_GITHUB_API_TOKEN="8c9800863aa691db7ac309e23a28401cdbb4f016"
 
 function exists { which $1 &> /dev/null }
 

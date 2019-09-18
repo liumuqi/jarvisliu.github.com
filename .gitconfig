@@ -16,7 +16,7 @@
     br = branch 
     st = status
 	d = difftool
-    lg = log --graph --abbrev-commit --decorate --author-date-order --format=format:'%C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%aD%C(reset) %C(reset)%C(bold red)%d%C(reset)' --author='^((?!aone).*)$'
+    lg = log --graph --abbrev-commit --decorate --author-date-order --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold red)%d%C(reset)' --author='^((?!aone).*)$'
     ;lg = log --graph --abbrev-commit --decorate --author-date-order   --format=format:'%C(bold cyan)%ai[%ci]%C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) - %C(reset)%C(bold yellow)%d%C(reset)' --author='^((?!aone).*)$'
     lpg = log --graph --abbrev-commit --decorate --author-date-order  --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold red)%d%C(reset) ' --first-parent --author='^((?!aone).*)$'
     lsg = log --graph --abbrev-commit --decorate --author-date-order  --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold red)%d%C(reset) ' --all --author='^((?!aone).*)$';--simplify-by-decoration

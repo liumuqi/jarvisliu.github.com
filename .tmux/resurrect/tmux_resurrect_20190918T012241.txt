@@ -1,0 +1,7 @@
+pane	qishan	1	:local	1	:*Z	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	0	zsh	:
+pane	qishan	1	:local	1	:*Z	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	1	zsh	:
+pane	qishan	2	:online	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	1	zsh	:
+pane	qishan	2	:online	0	:-	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	0	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
+window	qishan	1	1	:*Z	ea5f,208x57,0,0[208x28,0,0,1,208x28,0,29,4]
+window	qishan	2	0	:-	7de1,208x57,0,0[208x38,0,0,2,208x18,0,39,3]
+state	qishan	

@@ -7,6 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="dst"
+set -o vi
 #ZSH_THEME="philips"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -199,7 +200,8 @@ alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
 alias java_home='/usr/libexec/java_home'
-export TERM='screen-256color'
+#export TERM='screen-256color'
+export TERM='xterm-256color'
 
 #export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
 export GOPATH="/Users/qishan/golibs"
@@ -255,6 +257,8 @@ setgo(){
     fi
 }
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cargo/env
+source /Users/qishan/Documents/code/github/emsdk/emsdk_env.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -263,7 +267,8 @@ export SDKMAN_DIR="/Users/qishan/.sdkman"
 [[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 #export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN="8c9800863aa691db7ac309e23a28401cdbb4f016"
+export HOMEBREW_GITHUB_API_TOKEN="31e144c84ef78c824547d7e68a0ed3bff0c85df2"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 function exists { which $1 &> /dev/null }
 

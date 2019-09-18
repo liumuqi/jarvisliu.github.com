@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	1	ruby	:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby -W0 --disable=gems,did_you_mean,rubyopt /usr/local/Homebrew/Library/Homebrew/brew.rb upgrade
-pane	qishan	2	:online	1	:*	1	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	0	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
-pane	qishan	2	:online	1	:*	2	:/Users/qishan/Documents/code/alibaba/gitlab/work/hummer/hummer-average-tool	1	ssh	:ssh muqi.lmq@login1.et2.alibaba.org
-window	qishan	1	0	:-	cc9e,208x57,0,0,1
-window	qishan	2	1	:*	7de1,208x57,0,0[208x38,0,0,2,208x18,0,39,3]
-state	qishan	

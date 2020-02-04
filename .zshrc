@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow-avh mvn go golang docker brew jump osx gem svn go golang rust)
+plugins=(git git-extras git-flow-avh mvn go golang docker docker-compose brew jump osx gem svn rust cargo ripgrep kubectl)
 
 
 
@@ -211,7 +211,7 @@ export GOPATH="/Users/qishan/golibs"
 #export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
 #export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 #export GO15VENDOREXPERIMENT=1
-export  MAVEN_HOME=/Users/qishan/worksoft/apache-maven-3.3.9
+export  MAVEN_HOME=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2
 export MYRUN=/Users/qishan/shell/
 export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
@@ -228,6 +228,7 @@ alias setJDK8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8`'
 alias setJDK10='export JAVA_HOME=`/usr/libexec/java_home -v 10`'
 # set to the default JDK
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 #
 #jdk6(){
     #export PATH=$JAVA6HOME/bin:$PATH
@@ -255,6 +256,10 @@ setgo(){
     else
         export GOPATH="$(pwd):/Users/qishan/golibs"
     fi
+}
+
+function jhome(){
+ export JAVA_HOME="`/usr/libexec/java_home -v $1`"
 }
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
@@ -293,3 +298,5 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/opt/google/bin:$PATH"

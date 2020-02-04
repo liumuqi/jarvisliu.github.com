@@ -555,7 +555,8 @@ set autowrite
 set ru
 set sm  "smartmatch"
 set cursorline "设置光标行线
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=red guibg=darkred guifg=red
 set nocp    "设置兼容
 set expandtab   "设置tab
 set smarttab

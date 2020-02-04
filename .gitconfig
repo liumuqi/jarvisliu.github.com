@@ -6,13 +6,15 @@
 [user]
 	name = muqi.lmq
 	email = muqi.lmq@autonavi.com
-[diff]
-    ;tool = kdiff3
-    tool = sourcetree
-[difftool]
-    prompt = false
+;[diff]
+    ;;tool = kdiff3
+    ;tool = sourcetree
+;[difftool]
+    ;prompt = false
 [alias]
     c = commit
+    m = merge
+    co = checkout
     br = branch 
     st = status
 	d = difftool
@@ -23,6 +25,9 @@
     lspg = log --graph --abbrev-commit --decorate --author-date-order  --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold red)%d%C(reset)' --all --first-parent --author='^((?!aone).*)$'
     lscg = log --graph --author-date-order --abbrev-commit --format=format:'%C(bold cyan)%ai %C(reset) - %C(bold blue)%h%C(reset) - %an%C(reset) - ''%C(white)%s%C(reset) %C(dim white) - %C(bold cyan)%ar%C(reset) %C(reset)%C(bold red)%d%C(reset)' --all --author='^((?!aone).*)$'
     rl = reflog --pretty=reflog
+	cmm = rebase -i @{upstream}
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\"  ] && git show $merge'"
 [color]
     diff = auto
 	ui = true
@@ -31,18 +36,16 @@
 	ignorecase = false
 	;editor = vim
 [merge]
-    ;tool = kdiff3
-    tool = sourcetree
-	conflictstyle = diff3
-	commit = no
-	ff = no
-    log = true
-;[difftool "sourcetree"]
-	;cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	;path = 
-;[mergetool "sourcetree"]
-	;cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	;trustExitCode = true
+    tool = p4merge
+    keepBackup = false
+    no-ff = true
+[mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+;[diff]
+    ;external = p4diff
 [credential]
 	helper = osxkeychain
 [pull]
@@ -51,11 +54,11 @@
 	;keepBackup = false
 [grep]
 	patternType = perl
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+;[difftool "sourcetree"]
+	;cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	;path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = /Users/qishan/.stCommitMsg

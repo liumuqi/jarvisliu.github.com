@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 "my Plugin here:
 " original repos on github
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-flake8'
 "Plugin 'tmux-plugins/vim-tmux'
 "Plugin 'vim-ruby/vim-ruby'
@@ -513,6 +514,7 @@ nnoremap <silent> <Leader>dl :diffget local<CR>
 nnoremap <silent> <Leader>db :diffget base<CR>
 nnoremap <silent> <Leader>dr :diffget remote<CR>
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
+nnoremap <silent> <leader>o :All<cr>
 "=======================nerdtree=====================
 " Globals
 " NERDTree width

@@ -4,8 +4,8 @@
 	required = true
 	process = git-lfs filter-process
 [user]
-	name = muqi.lmq
-	email = muqi.lmq@autonavi.com
+	name = liumuqi
+	email = liumuqi@shuiditech.com
 ;[diff]
     ;;tool = kdiff3
     ;tool = sourcetree

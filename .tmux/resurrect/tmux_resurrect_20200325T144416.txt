@@ -1,0 +1,4 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs	0	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw sdb-admin/insurance-admin-web/src/main/java/com/shuidihuzhu/sdb/admin/controller/payguide/InsurancePayGuideController.java
+pane	qishan	1	:local	1	:*	2	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
+window	qishan	1	1	:*	28ba,212x62,0,0[212x31,0,0,8,212x30,0,32,9]
+state	qishan	

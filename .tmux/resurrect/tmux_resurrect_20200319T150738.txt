@@ -1,0 +1,5 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/huzhu/huzhu-api	1	zsh	:-zsh
+pane	qishan	2	:m	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
+window	qishan	1	1	:*	b7de,212x62,0,0,1
+window	qishan	2	0	:-	b7e0,212x62,0,0,3
+state	qishan	

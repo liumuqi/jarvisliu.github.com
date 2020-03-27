@@ -1,0 +1,5 @@
+pane	qishan	1	:m	1	:*	1	:/Users/lmq/Documents/code/gitlabs/config	1	zsh	:
+pane	qishan	2	:test	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-message	1	zsh	:
+window	qishan	1	1	:*	b7e1,212x62,0,0,4
+window	qishan	2	0	:-	ce5e,259x76,0,0,1
+state	qishan	

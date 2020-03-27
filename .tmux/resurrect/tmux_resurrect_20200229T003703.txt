@@ -1,0 +1,5 @@
+pane	qishan	1	:m	0	:-	1	:/Users/lmq/Documents/code/gitlabs/config	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw huzhu-api/huzhu-api.yml
+pane	qishan	2	:test	1	:*	1	:/Users/lmq/.m2	1	jshell	:/usr/bin/jshell
+window	qishan	1	0	:-	b7e1,212x62,0,0,4
+window	qishan	2	1	:*	b7de,212x62,0,0,1
+state	qishan	

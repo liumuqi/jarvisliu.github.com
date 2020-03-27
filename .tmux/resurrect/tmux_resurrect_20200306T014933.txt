@@ -1,0 +1,7 @@
+pane	qishan	1	:m	0	:-	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis/rusts/study_rust	0	zsh	:
+pane	qishan	1	:m	0	:-	2	:/Users/lmq/.spacemacs.d	1	node	:npm    
+pane	qishan	2	:work	1	:*	1	:/Users/lmq/Documents/code/gitlabs/config/sdb-crm-workorder	1	zsh	:
+pane	qishan	2	:work	1	:*	2	:/Users/lmq/Documents/code/gitlabs/config/sdb-crm-workorder	0	zsh	:
+window	qishan	1	0	:-	28ab,212x62,0,0[212x31,0,0,1,212x30,0,32,7]
+window	qishan	2	1	:*	c336,212x62,0,0[212x38,0,0,6,212x23,0,39,8]
+state	qishan	

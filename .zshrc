@@ -200,6 +200,7 @@ alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
 alias java_home='/usr/libexec/java_home'
+alias emacs='emacs -nw'
 #export TERM='screen-256color'
 export TERM='xterm-256color'
 
@@ -277,26 +278,37 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 function exists { which $1 &> /dev/null }
 
-if exists percol; then
-    function percol_select_history() {
-        local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
-    }
+#if exists percol; then
+    #function percol_select_history() {
+        #local tac
+        #exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        #BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        #CURSOR=$#BUFFER         # move cursor
+        #zle -R -c               # refresh
+    #}
 
-    zle -N percol_select_history
-    bindkey '^R' percol_select_history
-fi
+    #zle -N percol_select_history
+    #bindkey '^R' percol_select_history
+#fi
+
 export PATH=/usr/local/opt/openssl/bin:$PATH
-
 export PATH=~/.cargo/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-#export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/opt/google/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#fzfp() {
+#    fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
+#}
+alias ft='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}"'
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}" | fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
+#export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
+alias vifi='vim `ft`'
+alias efi='emacs `ft`'

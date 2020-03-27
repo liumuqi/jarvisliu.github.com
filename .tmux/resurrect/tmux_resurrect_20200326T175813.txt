@@ -1,0 +1,7 @@
+pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	vim	:vim /Users/lmq/.zshrc
+pane	qishan	2	:tmp	1	:*	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	curl	:curl -v -H X-Config-Token: token-goes-here http://configserver.shuiditech.com/api-gateway/production/master
+jq
+grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn redisson-cluster-handler
+window	qishan	1	0	:-	5c21,212x62,0,0,12
+window	qishan	2	1	:*	5c23,212x62,0,0,14
+state	qishan	

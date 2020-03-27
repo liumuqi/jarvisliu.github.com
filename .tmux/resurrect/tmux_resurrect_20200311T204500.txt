@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
-pane	qishan	1	:local	0	:-Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	1	jshell	:/usr/bin/jshell
-pane	qishan	2	:m	1	:*	1	:/Users/lmq/Documents/code/github/golangs	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw logs
-window	qishan	1	0	:-Z	28a7,212x62,0,0[212x31,0,0,0,212x30,0,32,3]
-window	qishan	2	1	:*	b7df,212x62,0,0,2
-state	qishan	

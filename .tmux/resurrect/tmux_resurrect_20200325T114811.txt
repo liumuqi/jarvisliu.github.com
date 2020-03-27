@@ -1,4 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/infra	1	zsh	:
-pane	qishan	1	:local	1	:*	2	:/Users/lmq/Documents/code/gitlabs/sdbs	0	kubectl	:kubectl exec -it -n zelda --context shuidi-test-liumuqi spring-sdb-crm-workorder-normal-57f7f57f97-2zpvs sh
-window	qishan	1	1	:*	28ba,212x62,0,0[212x31,0,0,8,212x30,0,32,9]
-state	qishan	

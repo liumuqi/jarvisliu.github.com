@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github/rusts/hyper	1	zsh	:
-pane	qishan	2	:test	0	:-	1	:/Users/lmq/Documents	1	zsh	:
-window	qishan	1	1	:*	ce5d,259x76,0,0,0
-window	qishan	2	0	:-	ce5e,259x76,0,0,1
-state	qishan	

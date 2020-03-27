@@ -1,6 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	Emacs	:vim /Users/lmq/.zshrc
-/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw .mvn/jvm.config
-pane	qishan	2	:tmp	0	:-	1	:/Users/lmq/.m2	1	zsh	:
-window	qishan	1	1	:*	5c21,212x62,0,0,12
-window	qishan	2	0	:-	5c20,212x62,0,0,11
-state	qishan	

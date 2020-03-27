@@ -1,5 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
-pane	qishan	2	:tmp	1	:*	1	:/Users/lmq/工具	1	zsh	:
-window	qishan	1	0	:-	5c21,212x62,0,0,12
-window	qishan	2	1	:*	5c23,212x62,0,0,14
-state	qishan	

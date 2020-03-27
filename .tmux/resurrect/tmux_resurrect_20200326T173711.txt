@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	vim	:vim /Users/lmq/.zshrc
-pane	qishan	2	:tmp	1	:*Z	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	0	zsh	:
-pane	qishan	2	:tmp	1	:*Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-insurance	1	zsh	:-zsh
-window	qishan	1	0	:-	5c21,212x62,0,0,12
-window	qishan	2	1	:*Z	418a,212x62,0,0[212x31,0,0,11,212x30,0,32,13]
-state	qishan	

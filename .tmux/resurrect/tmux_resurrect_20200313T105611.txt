@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs	0	kubectl	:kubectl logs -f spring-sdb-crm-workorder-normal-6588cbdc99-wd6f4 -n zelda sdb-crm-workorder --since=2h
-pane	qishan	1	:local	0	:-	2	:/Users/lmq/Documents/code/gitlabs/sdbs	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw logs
-pane	qishan	2	:m	1	:*	1	:/Users/lmq/.emacs.d	1	zsh	:
-window	qishan	1	0	:-	d929,212x62,0,0[212x13,0,0,1,212x48,0,14,4]
-window	qishan	2	1	:*	b7e0,212x62,0,0,3
-state	qishan	

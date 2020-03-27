@@ -1,5 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/infra/actuator-enhance-spring-boot-starter	1	java	:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/bin/java -classpath /Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2/boot/plexus-classworlds-2.5.1.jar -Dclassworlds.conf=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2/bin/m2.conf -Dmaven.home=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2 org.codehaus.plexus.classworlds.launcher.Launcher dependency:sources -Dsilent=true
-pane	qishan	2	:tmp	1	:*	1	:	1	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
-window	qishan	1	0	:-	5c21,212x62,0,0,12
-window	qishan	2	1	:*	5c20,212x62,0,0,11
-state	qishan	

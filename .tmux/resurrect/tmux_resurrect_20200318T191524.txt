@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-api	1	zsh	:
-pane	qishan	2	:m	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	kubectl	:kubectl exec -it -n zelda --context shuidi-test-liumuqi redis-0 sh
-window	qishan	1	1	:*	b7de,212x62,0,0,1
-window	qishan	2	0	:-	b7e0,212x62,0,0,3
-state	qishan	

@@ -1,4 +1,0 @@
-pane	qishan	1	:local	1	:*Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
-pane	qishan	1	:local	1	:*Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	1	rustup	:rustup update
-window	qishan	1	1	:*Z	f7f9,212x62,0,0[212x9,0,0,1,212x52,0,10,8]
-state	qishan	

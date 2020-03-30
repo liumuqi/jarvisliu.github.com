@@ -16,8 +16,8 @@
 	<key>persistFor</key>
 	<integer>3</integer>
 	<key>persistForFiles</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>persistForImages</key>
-	<integer>3</integer>
+	<integer>1</integer>
 </dict>
 </plist>

@@ -306,9 +306,9 @@ export PATH="/opt/google/bin:$PATH"
 #fzfp() {
 #    fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
 #}
-alias ft='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
+alias f='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}"'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}" | fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
 #export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
-alias vifi='vim `ft`'
-alias efi='emacs `ft`'
+alias vifi='vim `f`'
+alias efi='emacs `f`'

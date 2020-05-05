@@ -276,7 +276,7 @@ export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 export HOMEBREW_GITHUB_API_TOKEN="31e144c84ef78c824547d7e68a0ed3bff0c85df2"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
-function exists { which $1 &> /dev/null }
+#function exists { which $1 &> /dev/null }
 
 #if exists percol; then
     #function percol_select_history() {
@@ -310,5 +310,5 @@ alias f='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a bi
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}"'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}" | fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
 #export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
-alias vifi='vim `f`'
-alias efi='emacs `f`'
+alias vif='vim `f`'
+alias ef='emacs `f`'

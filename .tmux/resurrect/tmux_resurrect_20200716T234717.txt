@@ -1,0 +1,6 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github/javas	1	vim	:vim datas
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-api	1	zsh	:
+pane	qishan	2	:l	0	:-	2	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-api	0	zsh	:
+window	qishan	1	1	:*	b7e2,212x62,0,0,5
+window	qishan	2	0	:-	a8ae,212x62,0,0[212x31,0,0,3,212x30,0,32,6]
+state	qishan	

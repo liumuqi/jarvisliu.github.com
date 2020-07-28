@@ -1,0 +1,5 @@
+pane	qishan	1	:local	0	:-	1	:	1	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
+pane	qishan	2	:l	1	:*	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis/rusts/study_rust	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw
+window	qishan	1	0	:-	5c24,212x62,0,0,15
+window	qishan	2	1	:*	5c25,212x62,0,0,16
+state	qishan	

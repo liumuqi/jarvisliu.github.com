@@ -36,7 +36,7 @@
 	ignorecase = false
 	;editor = vim
 [merge]
-    tool = p4merge
+    tool = vimdiff
     keepBackup = false
     no-ff = true
 [mergetool "p4merge"]

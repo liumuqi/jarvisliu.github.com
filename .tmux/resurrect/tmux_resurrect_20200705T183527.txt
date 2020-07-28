@@ -1,0 +1,7 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Scripts	0	zsh	:
+pane	qishan	1	:local	1	:*	2	:/Users/lmq	1	zsh	:
+pane	qishan	2	:pp	0	:-Z	1	:/Users/lmq/Documents/code/github/rusts	1	zsh	:
+pane	qishan	2	:pp	0	:-Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
+window	qishan	1	1	:*	c189,212x62,0,0[212x31,0,0,11,212x30,0,32,12]
+window	qishan	2	0	:-Z	14a1,212x62,0,0[212x31,0,0,6,212x30,0,32,13]
+state	qishan	

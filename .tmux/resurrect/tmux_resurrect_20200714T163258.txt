@@ -1,0 +1,6 @@
+pane	qishan	1	:local	1	:*Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-renewal	1	kubectl	:kubectl logs -f spring-sdb-renewal-normal-66946dc7fd-l84hb -n sdb sdb-renewal --context liumuqi-bedin-context --since=10m
+pane	qishan	1	:local	1	:*Z	2	:/Users/lmq/Documents/code/github/myself/tommyjarvis	0	zsh	:
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	zsh	:
+window	qishan	1	1	:*Z	a8ab,212x62,0,0[212x31,0,0,2,212x30,0,32,4]
+window	qishan	2	0	:-	b7e0,212x62,0,0,3
+state	qishan	

@@ -1,0 +1,5 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	ruby	:/usr/local/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/ruby -W0 --disable=gems,did_you_mean,rubyopt /usr/local/Homebrew/Library/Homebrew/brew.rb upgrade deno
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/github/rusts	1	zsh	:
+window	qishan	1	1	:*	b7df,212x62,0,0,2
+window	qishan	2	0	:-	b3e0,212x61,0,0,3
+state	qishan	

@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow-avh mvn go golang docker docker-compose brew jump osx gem svn rust cargo ripgrep kubectl)
+plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust cargo ripgrep kubectl)
 
 
 
@@ -301,6 +301,7 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/opt/google/bin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #fzfp() {

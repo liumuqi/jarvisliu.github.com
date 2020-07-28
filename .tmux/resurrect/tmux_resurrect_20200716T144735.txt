@@ -1,0 +1,5 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	1	zsh	:
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
+window	qishan	1	1	:*	b7e2,212x62,0,0,5
+window	qishan	2	0	:-	b7e0,212x62,0,0,3
+state	qishan	

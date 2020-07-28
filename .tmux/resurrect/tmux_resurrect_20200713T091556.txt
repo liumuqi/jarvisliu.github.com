@@ -1,0 +1,5 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/tmp	1	bash	:/bin/bash /usr/local/Homebrew/Library/Homebrew/brew.sh install ffmpeg
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/github/rusts	1	zsh	:
+window	qishan	1	1	:*	b7df,212x62,0,0,2
+window	qishan	2	0	:-	b7e0,212x62,0,0,3
+state	qishan	

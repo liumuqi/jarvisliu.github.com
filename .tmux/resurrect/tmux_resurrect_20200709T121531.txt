@@ -1,0 +1,6 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github	1	zsh	:
+pane	qishan	1	:local	1	:*	2	:/Users/lmq/Documents/code/gitlabs/infra	0	zsh	:
+pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/github/rusts/rsredisproxy	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw README.md
+window	qishan	1	1	:*	4110,212x62,0,0[212x31,0,0,15,212x30,0,32,17]
+window	qishan	2	0	:-	5c25,212x62,0,0,16
+state	qishan	

@@ -1,0 +1,5 @@
+pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/github	1	zsh	:
+pane	qishan	2	:l	1	:*	1	:/Users/lmq/Documents/code/github/rusts/rsredisproxy	1	zsh	:
+window	qishan	1	0	:-	5c24,212x62,0,0,15
+window	qishan	2	1	:*	5c25,212x62,0,0,16
+state	qishan	

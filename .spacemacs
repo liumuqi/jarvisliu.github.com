@@ -62,22 +62,34 @@ This function should only modify configuration layer settings."
      ;;(lsp :variables lsp-rust-server 'rust-analyzer)
      (lsp :variables
           lsp-ui-doc-enable nil
-          lsp-ui-sideline-code-actions-prefix " "
-          lsp-ui-sideline-show-hover nil
-          lsp-rust-server 'rust-analyzer
-          lsp-rust-analyzer-server-display-inlay-hints t
-          )
-     (rust :variables
-           rust-format-on-save t)
 
-     (auto-completion :variables
-                      auto-completion-return-key-behavior nil
-                      auto-completion-tab-key-behavior 'complete
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-private-snippets-directory nil)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips nil)
+          lsp-ui-sideline-code-actions-prefix " "
+      
+          lsp-ui-sideline-show-hover nil
+      
+          lsp-rust-server 'rust-analyzer
+      
+          lsp-rust-analyzer-server-display-inlay-hints t
+
      )
+
+     (rust :variables
+     
+         rust-format-on-save t)
+     
+     (auto-completion :variables
+     
+         auto-completion-return-key-behavior nil
+     
+         auto-completion-tab-key-behavior 'complete
+     
+         auto-completion-enable-sort-by-usage t
+     
+         auto-completion-private-snippets-directory nil)
+     
+     (syntax-checking :variables
+     
+         syntax-checking-enable-tooltips nil)
      markdown
      multiple-cursors
      ;; org

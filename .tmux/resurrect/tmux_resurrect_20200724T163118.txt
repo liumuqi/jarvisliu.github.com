@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi	1	java	:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/bin/java -Xmx1024m -XX:CICompilerCount=1 -XX:TieredStopAtLevel=1 -Djava.security.egd=file:/dev/./urandom -classpath /Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi/.mvn/wrapper/maven-wrapper.jar -Dmaven.home=/Users/lmq/Documents/code/gitlabs/infra -Dmaven.multiModuleProjectDirectory=/Users/lmq/Documents/code/gitlabs/infra/spring-cloud-shuidi org.apache.maven.wrapper.MavenWrapperMain clean -U install -DskipTests
-pane	qishan	2	:l	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	1	zsh	:
-window	qishan	1	1	:*	b7e6,212x62,0,0,9
-window	qishan	2	0	:-	b7e4,212x62,0,0,7
-state	qishan	

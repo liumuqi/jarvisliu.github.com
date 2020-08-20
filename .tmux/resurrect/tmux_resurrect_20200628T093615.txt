@@ -1,8 +1,0 @@
-pane	qishan	1	:local	0	:Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-task	1	node	:node /usr/local/bin/live-server
-pane	qishan	1	:local	0	:Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
-pane	qishan	2	:work	0	:-	1	:/Users/lmq/Documents/code/github/rusts/learn_rust	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw ReadMe.md
-pane	qishan	3	:ww	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	rustup	:rustup update
-window	qishan	1	0	:Z	01ac,212x62,0,0[212x11,0,0,1,212x50,0,12,9]
-window	qishan	2	0	:-	b7e0,212x62,0,0,3
-window	qishan	3	1	:*	b7e1,212x62,0,0,4
-state	qishan	

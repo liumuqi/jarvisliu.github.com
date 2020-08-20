@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-api	1	curl	:curl http://127.0.0.1:8098/api/sdb/insure/mi/detail -H authority: api.sdbao.com -H x-common-message: fHx8c1FraXRRY0I4RHRHQmlIQWhwTTE1OTM3NTQ3MDY4MTYtMTJ8W118fHx8 -H accept: application/json, text/plain, */* -H authorizationv2: ojtPbE04gtiJzItFrhOgKHR3HDMu4HHTSQUcd-sfOfM= -H x-b3-spanid: e9a243ff07ce1b99 -H x-b3-traceid: e9a243ff07ce1b99 -H user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 -H content-type: application/x-www-form-urlencoded -H origin: https://www.sdbao.com -H sec-fetch-site: same-site -H sec-fetch-mode: cors -H sec-fetch-dest: empty -H referer: https://www.sdbao.com/sems/ins/ax_bwylx2020_fjx_sy3?__safari__=true&abTestDebug=2872,4 -H accept-language: zh-CN,zh;q=0.9,en;q=0.8 --compressed
-pane	qishan	2	:pp	0	:-	1	:/Users/lmq/Documents/code/github/rusts	1	zsh	:
-window	qishan	1	1	:*	5c20,212x62,0,0,11
-window	qishan	2	0	:-	b7e3,212x62,0,0,6
-state	qishan	

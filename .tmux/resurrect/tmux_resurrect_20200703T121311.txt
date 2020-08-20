@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/insurance	1	java	:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/bin/java -classpath /Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2/boot/plexus-classworlds-2.5.1.jar -Dclassworlds.conf=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2/bin/m2.conf -Dmaven.home=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2 org.codehaus.plexus.classworlds.launcher.Launcher clean -U install -DskipTests
-pane	qishan	2	:pp	0	:-	1	:/Users/lmq/Documents/code/github/rusts	1	zsh	:
-window	qishan	1	1	:*	5c20,212x62,0,0,11
-window	qishan	2	0	:-	b7e3,212x62,0,0,6
-state	qishan	

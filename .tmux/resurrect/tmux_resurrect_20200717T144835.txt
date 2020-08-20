@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/github/javas	1	zsh	:
-pane	qishan	2	:l	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	0	curl	:curl http://127.0.0.1:18100/actuator/health
-pane	qishan	2	:l	1	:*	2	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	1	kubectl	:kubectl logs -f spring-sdb-renewal-normal-5785f74b85-vb422 -n sdb sdb-renewal --context liumuqi-bedin-context --since=1s
-window	qishan	1	0	:-	b7e2,212x62,0,0,5
-window	qishan	2	1	:*	1535,212x62,0,0[212x21,0,0,6,212x40,0,22,7]
-state	qishan	

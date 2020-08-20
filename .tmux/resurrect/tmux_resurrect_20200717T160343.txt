@@ -1,6 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/github/javas	1	zsh	:
-pane	qishan	2	:l	1	:*	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	0	curl	:curl http://127.0.0.1:18100/actuator/health
-pane	qishan	2	:l	1	:*	2	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-grow-api	1	zsh	:
-window	qishan	1	0	:-	b7e2,212x62,0,0,5
-window	qishan	2	1	:*	ce35,212x62,0,0[212x16,0,0,6,212x45,0,17,7]
-state	qishan	

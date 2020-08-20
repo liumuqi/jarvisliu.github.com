@@ -1,7 +1,0 @@
-pane	qishan	1	:local	0	:-Z	1	:/Users/lmq/Documents/code/github/rusts	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw
-pane	qishan	1	:local	0	:-Z	2	:	0	reattach-to-user-namespace	:xargs -0 -I@ sh -c echo @;git --git-dir=@ fetch -a
-pane	qishan	2	:pp	1	:*Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
-pane	qishan	2	:pp	1	:*Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
-window	qishan	1	1	:*Z	418c,212x62,0,0[212x31,0,0,12,212x30,0,32,15]
-window	qishan	2	0	:-Z	a8cc,212x62,0,0[212x19,0,0,13,212x42,0,20,14]
-state	qishan	

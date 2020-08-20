@@ -1,8 +1,0 @@
-pane	qishan	1	:local	0	:-Z	1	:/Users/lmq/Documents/code/gitlabs/sdbs	1	zsh	:
-pane	qishan	1	:local	0	:-Z	2	:/Users/lmq/Documents/code/gitlabs/sdbs	0	zsh	:
-pane	qishan	2	:work	1	:*	1	:/Users/lmq/Documents/code/github/rusts/learn_rust	1	zsh	:
-pane	qishan	3	:local	0	:	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis/javabase/target/classes/origin/base/reflections	1	zsh	:
-window	qishan	1	0	:-Z	81a8,212x62,0,0[212x11,0,0,1,212x50,0,12,2]
-window	qishan	2	1	:*	b7e0,212x62,0,0,3
-window	qishan	3	0	:	b7e1,212x62,0,0,4
-state	qishan	

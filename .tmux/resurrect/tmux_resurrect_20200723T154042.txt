@@ -1,5 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-insurance	1	zsh	:
-pane	qishan	2	:l	1	:*	1	:/Users/lmq/Documents/code/gitlabs/config	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw
-window	qishan	1	0	:-	b7e6,212x62,0,0,9
-window	qishan	2	1	:*	b7e4,212x62,0,0,7
-state	qishan	

@@ -1,5 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code/gitlabs/sdbs/sdb-renewal	1	vim	:vim src/main/java/com/shuidihuzhu/sdb/renewal/job/RenewalRemindCallRobotV2Job.java
-pane	qishan	2	:pp	1	:*	1	:/Users/lmq/Documents/code/github/rusts	1	node	:node /usr/local/bin/live-server
-window	qishan	1	0	:-	5c20,212x62,0,0,11
-window	qishan	2	1	:*	b7e3,212x62,0,0,6
-state	qishan	

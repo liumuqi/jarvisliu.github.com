@@ -200,7 +200,7 @@ alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
 alias java_home='/usr/libexec/java_home'
-alias emacs='emacs -nw'
+alias memacs='emacs -nw'
 #export TERM='screen-256color'
 export TERM='xterm-256color'
 

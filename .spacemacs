@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
+   '(javascript
+     rust
      rust
      debug
      nginx
@@ -71,7 +72,8 @@ values."
          syntax-checking-enable-tooltips nil)
      markdown
      multiple-cursors
-
+     treemacs
+     treemacs-persp
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30

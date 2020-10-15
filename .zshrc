@@ -52,10 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust cargo ripgrep kubectl)
-
-
-
+plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust rustup cargo ripgrep kubectl helm)
 
 bindkey -v
 bindkey "^?" backward-delete-char
@@ -212,7 +209,7 @@ export GOPATH="/Users/qishan/golibs"
 #export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
 #export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 #export GO15VENDOREXPERIMENT=1
-export  MAVEN_HOME=/Users/lmq/Documents/javaWorksoft/apache-maven-3.2.2
+export  MAVEN_HOME=/Users/lmq/Documents/javaWorksoft/apache-maven-3.6.3
 export MYRUN=/Users/qishan/shell/
 export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"

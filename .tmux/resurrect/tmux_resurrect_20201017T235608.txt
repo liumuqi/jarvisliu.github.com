@@ -1,5 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code	1	zsh	:
-pane	qishan	2	:work	0	:-	1	:/Users/lmq	1	git	:/Applications/Xcode.app/Contents/Developer/usr/bin/git clone https://github.com/syl20bnr/spacemacs /Users/lmq/.emacs.d
-window	qishan	1	1	:*	c725,201x66,0,0,8
-window	qishan	2	0	:-	d324,209x68,0,0,7
-state	qishan	

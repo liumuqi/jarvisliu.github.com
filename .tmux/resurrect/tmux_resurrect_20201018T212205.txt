@@ -1,6 +1,0 @@
-pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code	1	zsh	:
-pane	qishan	1	:local	1	:*	2	:/Users/lmq	0	zsh	:
-pane	qishan	2	:work	0	:-	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis	1	zsh	:
-window	qishan	1	1	:*	8ca2,244x68,0,0[244x37,0,0,1,244x30,0,38,7]
-window	qishan	2	0	:-	d1a2,244x68,0,0,5
-state	qishan	

@@ -1,5 +1,0 @@
-pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code	1	git	:/Applications/Xcode.app/Contents/Developer/usr/bin/git clone https://github.com/apache/cassandra.git
-pane	qishan	2	:work	1	:*	1	:/Users/lmq/.emacs.d	1	zsh	:
-window	qishan	1	0	:-	d19e,244x68,0,0,1
-window	qishan	2	1	:*	c99f,244x66,0,0,2
-state	qishan	

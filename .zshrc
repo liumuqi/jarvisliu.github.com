@@ -261,7 +261,7 @@ function jhome(){
 }
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
-source /Users/qishan/Documents/code/github/emsdk/emsdk_env.sh
+#source /Users/qishan/Documents/code/github/emsdk/emsdk_env.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -298,6 +298,7 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/opt/google/bin:$PATH"
+export PATH="/Users/lmq/Downloads/worksoft/apache-ant-1.10.9/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -310,3 +311,14 @@ export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{no
 #export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 alias vif='vim `f`'
 alias ef='emacs `f`'
+alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
+"time_namelookup": %{time_namelookup},
+"time_connect": %{time_connect},
+"time_appconnect": %{time_appconnect},
+"time_pretransfer": %{time_pretransfer},
+"time_starttransfer": %{time_starttransfer},
+"time_total": %{time_total},
+"size_request": %{size_request},
+"size_upload": %{size_upload},
+"size_download": %{size_download},
+"size_header": %{size_header}\n '"'"' -o /dev/null -s '

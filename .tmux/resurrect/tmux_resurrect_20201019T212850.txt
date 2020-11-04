@@ -1,0 +1,5 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis/javabase/out/artifacts/java_jar	1	bash	:/bin/bash /usr/local/Homebrew/Library/Homebrew/brew.sh upgrade scala
+pane	qishan	2	:work	0	:-	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis	1	Emacs	:/usr/local/Cellar/emacs-plus/26.3/Emacs.app/Contents/MacOS/Emacs -nw /Users/lmq/.m2/settings.xml
+window	qishan	1	1	:*	d19e,244x68,0,0,1
+window	qishan	2	0	:-	d1a2,244x68,0,0,5
+state	qishan	

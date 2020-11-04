@@ -1,0 +1,4 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github/myself/tommyjarvis	0	zsh	:
+pane	qishan	1	:local	1	:*	2	:/Users/lmq/.vim	1	zsh	:
+window	qishan	1	1	:*	faff,209x68,0,0[209x34,0,0,1,209x33,0,35,2]
+state	qishan	

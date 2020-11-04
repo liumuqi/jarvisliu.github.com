@@ -1,0 +1,4 @@
+pane	qishan	1	:local	1	:*	1	:/Users/lmq/Documents/code/github	0	zsh	:
+pane	qishan	1	:local	1	:*	2	:/Users/lmq/.oh-my-zsh	1	bash	:sh /Users/lmq/.oh-my-zsh/tools/upgrade.sh
+window	qishan	1	1	:*	fb01,209x68,0,0[209x34,0,0,1,209x33,0,35,6]
+state	qishan	

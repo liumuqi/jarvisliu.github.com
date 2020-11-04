@@ -1,0 +1,6 @@
+pane	qishan	1	:local	0	:-	1	:/Users/lmq/Documents/code	0	zsh	:
+pane	qishan	1	:local	0	:-	2	:/Users/lmq/Documents/code/sdbs	1	zsh	:
+pane	qishan	2	:work	1	:*	1	:/Users/lmq	1	git	:/Applications/Xcode.app/Contents/Developer/usr/bin/git clone https://github.com/syl20bnr/spacemacs /Users/lmq/.emacs.d
+window	qishan	1	1	:*	fb01,209x68,0,0[209x34,0,0,1,209x33,0,35,6]
+window	qishan	2	0	:-	d324,209x68,0,0,7
+state	qishan	

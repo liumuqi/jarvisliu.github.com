@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -5,8 +12,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="dst"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="dst"
 set -o vi
 #ZSH_THEME="philips"
 
@@ -52,7 +59,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust rustup cargo ripgrep kubectl helm)
+plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust rustup cargo ripgrep kubectl helm zsh-autosuggestions)
 
 bindkey -v
 bindkey "^?" backward-delete-char
@@ -185,7 +192,7 @@ PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr 
 alias ls='lsd -l'
 alias ll='lsd -l'
 alias tmux='tmux -2u'
-alias tc='tmux new-session -s qishan'
+alias tc='tmux new-session -s lmq'
 alias gvim='setgo;vim'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias gall='for i in `ls`; do echo "begin---->"$i && $(cd  $i && git pull --rebase) ; done'
@@ -196,36 +203,36 @@ alias csc='cscope -Rbkq'
 alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
-alias java_home='/usr/libexec/java_home'
+#alias java_home='/usr/libexec/java_home'
 alias memacs='emacs -nw'
 #export TERM='screen-256color'
 export TERM='xterm-256color'
 
-#export GOPATH="/Users/qishan/Documents/mogujie_code/recommender/remosis/agent:/Users/qishan/golibs"
-export GOPATH="/Users/qishan/golibs"
+#export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
+export GOPATH="/Users/lmq/.golibs"
 #export GOROOT="/usr/local/Cellar/go/1.12.6/libexec"
 #export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 #export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 #export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
 #export JAVA10HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 #export GO15VENDOREXPERIMENT=1
-export  MAVEN_HOME=/Users/lmq/Documents/javaWorksoft/apache-maven-3.6.3
-export MYRUN=/Users/qishan/shell/
-export PATH=/Users/qishan/bin:/Users/qishan/golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
+export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.6.3/
+export MYRUN=/Users/lmq/shell/
+export PATH=/Users/lmq/.golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
-export SSLKEYLOGFILE=/Users/qishan/.tls/sslkeylog.log
+export SSLKEYLOGFILE=/Users/lmq/.tls/sslkeylog.log
 #export DOCKER_IP=`boot2docker ip`
 #export DOCKER_HOST=`boot2docker socket`
-export SH=/Users/qishan/Documents/code/alibaba/gitlab/shell/code_effect
-export odpscmd=/Users/qishan/Documents/code/alibaba/tools/odps_clt_release_64/bin
+export SH=/Users/lmq/Documents/code/alibaba/gitlab/shell/code_effect
+export odpscmd=/Users/lmq/Documents/code/alibaba/tools/odps_clt_release_64/bin
 export PATH=$odpscmd:$SH:$PATH
 #alias commands to enable easy setting of JDK version
-alias setJDK7='export JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
-alias setJDK8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8`'
-alias setJDK10='export JAVA_HOME=`/usr/libexec/java_home -v 10`'
+alias setJDK7='export JAVA_HOME=`unset JAVA_HOME;/usr/libexec/java_home -v 1.7`'
+alias setJDK8='export JAVA_HOME=`unset JAVA_HOME;/usr/libexec/java_home -v 1.8`'
+alias setJDK10='export JAVA_HOME=`unset JAVA_HOME;/usr/libexec/java_home -v 10`'
 # set to the default JDK
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 #
 #jdk6(){
@@ -250,27 +257,27 @@ setgo(){
     p=$(pwd)
     if [[ $p == *"/src/"* ]] then
         #index=
-        export GOPATH="${p/%src*/}:/Users/qishan/golibs"
+        export GOPATH="${p/%src*/}:/Users/lmq/.golibs"
     else
-        export GOPATH="$(pwd):/Users/qishan/golibs"
+        export GOPATH="$(pwd):/Users/lmq/.golibs"
     fi
 }
 
 function jhome(){
- export JAVA_HOME="`/usr/libexec/java_home -v $1`"
+ export JAVA_HOME="`unset JAVA_HOME;/usr/libexec/java_home -v $1`"
 }
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
-#source /Users/qishan/Documents/code/github/emsdk/emsdk_env.sh
+#source /Users/lmq/Documents/code/github/emsdk/emsdk_env.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/qishan/.sdkman"
-[[ -s "/Users/qishan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/qishan/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/lmq/.sdkman"
+[[ -s "/Users/lmq/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/lmq/.sdkman/bin/sdkman-init.sh"
 export TMUX_POWERLINE_SEG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 #export PATH=/usr/local/opt/protobuf@2.6/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN="31e144c84ef78c824547d7e68a0ed3bff0c85df2"
+export HOMEBREW_GITHUB_API_TOKEN="21e43a6d2e8e0e9965a7d34ee6b9063dbe67e453"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 #function exists { which $1 &> /dev/null }
@@ -288,20 +295,26 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
     #bindkey '^R' percol_select_history
 #fi
 
+eval $(/opt/homebrew/bin/brew shellenv)
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+#export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
 #export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # 58172d7efb76a6666f5a0652aecf87d058d18631  vscode syncing
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/opt/google/bin:$PATH"
 export PATH="/Users/lmq/Downloads/worksoft/apache-ant-1.10.9/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #fzfp() {
 #    fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
 #}
@@ -309,6 +322,7 @@ alias f='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a bi
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}"'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.idea}" | fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'"'"
 #export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
+#export FZF_DEFAULT_OPTS='—height=40% —preview="cat {}" —preview-window=right:60%:wrap'
 alias vif='vim `f`'
 alias ef='emacs `f`'
 alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
@@ -322,3 +336,12 @@ alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
 "size_upload": %{size_upload},
 "size_download": %{size_download},
 "size_header": %{size_header}\n '"'"' -o /dev/null -s '
+alias mxxlonline='mysql -ubtd-xxl-job-prod-admin -h10.218.2.100 -P8201 -plrkeZ5F5chrdlww'
+alias mbtdonline='mysql -uBTD-pub -h10.10.3.30 -P5729 -pMd3Vaodfs'
+
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+export https_proxy=http://127.0.0.1:4780 http_proxy=http://127.0.0.1:4780 all_proxy=socks5://127.0.0.1:4781
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

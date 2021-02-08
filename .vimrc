@@ -611,6 +611,8 @@ augroup project
     autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
 let &path.="./,./src/,./include,./src/include,/usr/include/AL,"
+let g:airline_powerline_fonts = 1
 set includeexpr=substitute(v:fname,'\\.','/','g')
+set rtp+=/opt/homebrew/bin/fzf
 "设置visual block select colors
 hi Visual term=reverse cterm=reverse guibg=Grey

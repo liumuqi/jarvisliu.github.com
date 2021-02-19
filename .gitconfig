@@ -5,7 +5,7 @@
 	process = git-lfs filter-process
 [user]
 	name = liumuqi
-	email = 399211328@qq.com
+	email = 
 ;[diff]
     ;;tool = kdiff3
     ;tool = sourcetree

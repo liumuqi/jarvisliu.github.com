@@ -338,9 +338,10 @@ alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
 "size_header": %{size_header}\n '"'"' -o /dev/null -s '
 alias mxxlonline='mysql -ubtd-xxl-job-prod-admin -h10.218.2.100 -P8201 -plrkeZ5F5chrdlww'
 alias mbtdonline='mysql -uBTD-pub -h10.10.3.30 -P5729 -pMd3Vaodfs'
+alias rgf="rg --files | rg"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
-export https_proxy=http://127.0.0.1:4780 http_proxy=http://127.0.0.1:4780 all_proxy=socks5://127.0.0.1:4781
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

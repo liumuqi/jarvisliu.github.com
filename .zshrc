@@ -324,7 +324,7 @@ export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{no
 #export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 #export FZF_DEFAULT_OPTS='—height=40% —preview="cat {}" —preview-window=right:60%:wrap'
 alias vif='vim `f`'
-alias ef='emacs `f`'
+alias ef='emacs -nw `f`'
 alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
 "time_namelookup": %{time_namelookup},
 "time_connect": %{time_connect},

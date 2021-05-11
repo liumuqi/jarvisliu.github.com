@@ -108,7 +108,7 @@ Plugin 'restart.vim'
 "Plugin 'css_color.vim'
 "Plugin 'LustyExplorer'
 "Plugin 'hallettj/jslint.vim'
-Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 call vundle#end()
 "call pathogen#infect()
@@ -313,20 +313,20 @@ autocmd BufWritePre *.go :Fmt
 nmap <F3> :TagbarToggle<CR>
 "                             ctags
 "
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-let g:easytags_cmd = '/usr/local/bin/ctags'
-let g:easytags_dynamic_files = 1
-let g:easytags_events = ['BufWritePost']
-let g:easytags_async =1
-let g:easytags_always_enabled = 1
-let g:easytags_auto_highlight = 1
-let g:easytags_syntax_keyword = 'always'
-let g:easytags_on_cursorhold = 1
-let g:easytags_include_members = 1
+"let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+"let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+"let g:easytags_cmd = '/usr/local/bin/ctags'
+"let g:easytags_dynamic_files = 1
+"let g:easytags_events = ['BufWritePost']
+"let g:easytags_async =1
+"let g:easytags_always_enabled = 1
+"let g:easytags_auto_highlight = 1
+"let g:easytags_syntax_keyword = 'always'
+"let g:easytags_on_cursorhold = 1
+"let g:easytags_include_members = 1
 highlight link cMember Special
 highlight cMember gui=italic
-let g:easytags_resolve_links = 1
+"let g:easytags_resolve_links = 1
 "因为我们放在环境变量里，所以可以直接执行 
 let Tlist_Use_Right_Window=1 "让窗口显示在右边，0的话就是显示在左边  
 let Tlist_Show_One_File=1 "让taglist可以同时展示多个文件的函数列表 

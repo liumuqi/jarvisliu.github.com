@@ -59,7 +59,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust rustup cargo ripgrep kubectl helm zsh-autosuggestions)
+plugins=(git git-extras git-flow-avh mvn golang docker docker-compose brew jump osx gem svn rust rustup cargo ripgrep kubectl helm zsh-autosuggestions zsh-syntax-highlighting)
 
 bindkey -v
 bindkey "^?" backward-delete-char
@@ -107,6 +107,12 @@ function genpass() {
     dd if=/dev/urandom count=1 2>/dev/null | tr -cd 'A-Za-z0-9!@#$%^&*()_+' | cut -c-$1
 }
 
+function getuuid {
+    uuid=$(uuidgen | tr 'A-Z' 'a-z' | tr -d '\n')
+    (osascript -e "display notification with title \"⌘-V to paste\" subtitle \"$uuid\"" &) >/dev/null 2>&1
+    echo -n "$uuid" | pbcopy
+}
+#export -f getuuid
 
 # }}}
 # Output total memory currently in use by you {{{1
@@ -200,7 +206,7 @@ alias fetchall="find . -type d -name .git -print0| xargs -0 -I@  sh -c 'echo @;g
 alias t='/usr/bin/time -f "%Uu %Ss %er %MkB %C"'
 alias ydl='proxychains4 youtube-dl'
 alias csc='cscope -Rbkq'
-alias mctags='ctags -R'
+#alias mctags='ctags -R'
 alias rsync_code='rsync -av --exclude ".git" --exclude=".idea" --exclude="target/" '
 alias topc="ps -eL -o pid,%cpu,lwp|sort -nr -k2|awk '{printf(\"%s %s %x\n\",\$1,\$2,\$3)}'"
 #alias java_home='/usr/libexec/java_home'
@@ -210,7 +216,7 @@ export TERM='xterm-256color'
 
 #export GOPATH="/Users/lmq/Documents/mogujie_code/recommender/remosis/agent:/Users/lmq/golibs"
 export GOPATH="/Users/lmq/.golibs"
-#export GOROOT="/usr/local/Cellar/go/1.12.6/libexec"
+export GOROOT="/usr/local/Cellar/go/1.16.3/libexec/"
 #export JAVA6HOME="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 #export JAVA7HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 #export JAVA8HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
@@ -218,7 +224,7 @@ export GOPATH="/Users/lmq/.golibs"
 #export GO15VENDOREXPERIMENT=1
 export  MAVEN_HOME=/Users/lmq/worksoft/apache-maven-3.6.3/
 export MYRUN=/Users/lmq/shell/
-export PATH=/Users/lmq/.golibs/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
+export PATH=$GOPATH/bin:$MYRUN:$MAVEN_HOME/bin:$TESLA_HOME/bin:$PATH
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 export SSLKEYLOGFILE=/Users/lmq/.tls/sslkeylog.log
@@ -295,7 +301,7 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
     #bindkey '^R' percol_select_history
 #fi
 
-eval $(/opt/homebrew/bin/brew shellenv)
+#eval $(/opt/homebrew/bin/brew shellenv)
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -336,12 +342,20 @@ alias curltime='curl -w '"'"'"time_redirect": %{time_redirect},
 "size_upload": %{size_upload},
 "size_download": %{size_download},
 "size_header": %{size_header}\n '"'"' -o /dev/null -s '
-alias mxxlonline='mysql -ubtd-xxl-job-prod-admin -h10.218.2.100 -P8201 -plrkeZ5F5chrdlww'
-alias mbtdonline='mysql -uBTD-pub -h10.10.3.30 -P5729 -pMd3Vaodfs'
+#alias mxxlonline='mysql -ubtd-xxl-job-prod-admin -h10.218.2.100 -P8201 -plrkeZ5F5chrdlww'
+#alias mbtdonline='mysql -uBTD-pub -h10.10.3.30 -P5729 -pMd3Vaodfs'
 alias rgf="rg --files | rg"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
-export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+#export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+export http_proxy=http://127.0.0.1:12639
+export https_proxy=http://127.0.0.1:12639
+export no_proxy=localhost,127.0.0.1,.oa.com,.qq.com,.tencent.com
+export GOPRIVATE=git.code.oa.com,git.woa.com
+export GOPROXY="https://goproxy.woa.com,direct"
+export GOSUMDB="sum.woa.com+643d7a06+Ac5f5VOC4N8NUXdmhbm8pZSXIWfhek5JSmWdWrq7pLX4"
+export GONOPROXY="git.code.oa.com,git.woa.com"
+export GONOSUMDB="git.code.oa.com,git.woa.com"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

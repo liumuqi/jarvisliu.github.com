@@ -43,3 +43,6 @@ Thumbs.db
 .vscode
 .vscode/
 .factorypath
+
+#golang
+#go.sum

@@ -1,0 +1,260 @@
+unbind C-b
+set -g prefix C-d
+#set -g prefix C-d
+#setw -g  mode-keys vi
+setw -g  aggressive-resize on
+set -sg escape-time 0
+set -g display-time 1500
+set -g remain-on-exit off
+set -g repeat-time 300
+setw -g allow-rename off
+setw -g automatic-rename off
+
+set -g set-titles on
+set -g set-titles-string "#I:#W"
+
+# Unbind default key bindings, we're going to override
+unbind %    # split-window -h
+unbind '"'  # split-window
+
+#set-window-option -g mode-keys vi
+setw -g mouse on 
+setw -g mode-keys vi
+set -g status-keys vi
+
+#up
+bind-key k select-pane -U
+#down
+bind-key j select-pane -D
+#left
+bind-key h select-pane -L
+#right
+bind-key l select-pane -R
+# resize pane
+bind -r ^k resizep -U 10 # upward (prefix Ctrl+k)
+bind -r ^j resizep -D 10 # downward (prefix Ctrl+j)
+bind -r ^h resizep -L 10 # to the left (prefix Ctrl+h)
+bind -r ^l resizep -R 10 # to the right (prefix Ctrl+l)
+#=======================
+
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+bind h if-shell "$is_vim" "send-keys C-w h" "select-pane -L"
+bind j if-shell "$is_vim" "send-keys C-w j" "select-pane -D"
+bind k if-shell "$is_vim" "send-keys C-w k" "select-pane -U"
+bind l if-shell "$is_vim" "send-keys C-w l" "select-pane -R"
+
+
+bind H command-prompt -p "Resize left by lines:" "resize-pane -L %1"
+bind J command-prompt -p "Resize down by lines:" "resize-pane -D %1"
+bind K command-prompt -p "Resize up by lines:" "resize-pane -U %1"
+bind L command-prompt -p "Resize right by lines:" "resize-pane -R %1"
+bind C-h command-prompt -p \
+    "Change width to lines (current #{pane_width}):" "resize-pane -x %1"
+bind C-j command-prompt -p \
+    "Change height to lines (current #{pane_height}):" "resize-pane -y %1"
+bind C-k command-prompt -p \
+    "Change height to lines (current #{pane_height}):" "resize-pane -y %1"
+bind C-l command-prompt -p \
+    "Change width to lines (current #{pane_width}):" "resize-pane -x %1"
+bind y setw synchronize-panes
+bind s command-prompt "swap-window -t %1"
+bind S command-prompt "move-window -r -t %1"
+bind n movew -r\; display-message "Windows renumbered."
+
+#=======================
+
+bind -r Tab last-window   # cycle thru MRU tabs
+bind -r C-o swap-pane -D
+
+bind b split-window "tmux lsw | percol --initial-index $(tmux lsw | awk '/active.$/ {print NR-1}') | cut -d':' -f 1 | tr -d '\n' | xargs -0 tmux select-window -t"
+bind B split-window "tmux ls | percol --initial-index $(tmux ls | awk \"/^$(tmux display-message -p '#{session_name}'):/ {print NR-1}\") | cut -d':' -f 1 | tr -d '\n' | xargs -0 tmux switch-client -t"
+
+#set -g display-time 3000
+#set -g escape-time 0
+set -g history-limit 65535
+set -g base-index 1
+set -g pane-base-index 1
+# misc
+# select the last pane (prefix e)
+bind e lastp
+# select the last window (prefix Ctrl+e)
+bind ^e last
+# kill pane (prefix q)
+bind q killp
+# kill window (prefix Ctrl+q)
+bind ^q killw
+# Reload tmux configuration 
+#bind C-r source-file ~/.tmux.conf \; display "Config reloaded"
+
+# new window and retain cwd
+#bind c new-window -c "#{pane_current_path}"
+
+# Prompt to rename window right after it's created
+set-hook -g after-new-window 'command-prompt -I "#{window_name}" "rename-window '%%'"'
+
+#-- statusbar --#
+
+# ================================================
+# ===     Copy mode, scroll and clipboard      ===
+# ================================================
+set -g @copy_use_osc52_fallback on
+bind p paste-buffer
+bind C-p choose-buffer
+
+# trigger copy mode by
+#bind -n M-Up copy-mode
+
+# Scroll up/down by 1 line, half screen, whole screen
+bind -T copy-mode-vi M-Up              send-keys -X scroll-up
+bind -T copy-mode-vi M-Down            send-keys -X scroll-down
+bind -T copy-mode-vi M-PageUp          send-keys -X halfpage-up
+bind -T copy-mode-vi M-PageDown        send-keys -X halfpage-down
+bind -T copy-mode-vi PageDown          send-keys -X page-down
+bind -T copy-mode-vi PageUp            send-keys -X page-up
+
+# When scrolling with mouse wheel, reduce number of scrolled rows per tick to "2" (default is 5)
+bind -T copy-mode-vi WheelUpPane       select-pane \; send-keys -X -N 2 scroll-up
+bind -T copy-mode-vi WheelDownPane     select-pane \; send-keys -X -N 2 scroll-down
+
+
+
+# Copy selected text
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "$yank"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "$yank"
+bind -T copy-mode-vi Y send-keys -X copy-line \;\
+    run "tmux save-buffer - | $yank"
+bind-key -T copy-mode-vi D send-keys -X copy-end-of-line \;\
+    run "tmux save-buffer - | $yank"
+bind -T copy-mode-vi C-j send-keys -X copy-pipe-and-cancel "$yank"
+bind-key -T copy-mode-vi A send-keys -X append-selection-and-cancel \;\
+    run "tmux save-buffer - | $yank"
+
+
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi V send -X rectangle-toggle
+
+# Copy selection on drag end event, but do not cancel copy mode and do not clear selection
+# clear select on subsequence mouse click
+bind -T copy-mode-vi MouseDragEnd1Pane \
+    send-keys -X copy-pipe "$yank"
+bind -T copy-mode-vi MouseDown1Pane select-pane \;\
+   send-keys -X clear-selection
+    
+
+# Edit configuration and reload
+bind C-e new-window -n 'tmux.conf' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"Config reloaded\"'"
+
+# Rename session and window
+bind r command-prompt -I "#{window_name}" "rename-window '%%'"
+bind R command-prompt -I "#{session_name}" "rename-session '%%'"
+
+
+bind r next-layout
+bind R previous-layout
+bind T command-prompt -p "Select layout (main|even|tiled)-(hor|vert):" "select-layout %%"
+bind p command-prompt -p "put pane into:"  "join-pane -t '%%'"
+bind P command-prompt -p "pull pane from:"  "join-pane -s '%%'"
+bind c new-window -c "#{pane_current_path}"
+
+
+# Split panes
+bind | split-window -h -c "#{pane_current_path}"
+bind _ split-window -v -c "#{pane_current_path}"
+# Kill pane/window/session shortcuts
+bind x kill-pane
+bind X kill-window
+bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a"
+bind Q confirm-before -p "kill-session #S? (y/n)" kill-session
+
+bind C-u command-prompt -p "Session to merge with: " \
+   "run-shell 'yes | head -n #{session_windows} | xargs -I {} -n 1 tmux movew -t %%'"
+
+bind d detach
+bind D if -F '#{session_many_attached}' \
+    'confirm-before -p "Detach other clients? (y/n)" "detach -a"' \
+    'display "Session has only 1 client attached"'
+
+
+
+# ==================================================
+# === Window monitoring for activity and silence ===
+# ==================================================
+bind m setw monitor-activity \; display-message 'Monitor window activity [#{?monitor-activity,ON,OFF}]'
+bind M if -F '#{monitor-silence}' \
+    'setw monitor-silence 0 ; display-message "Monitor window silence [OFF]"' \
+    'command-prompt -p "Monitor silence: interval (s)" "setw monitor-silence %%"'
+
+# Activity bell and whistles
+set -g visual-activity on
+set -g set-clipboard on
+# default statusbar colors
+#set-option -g mouse on
+set-option -g status-bg colour235 #base02
+set-option -g status-fg colour136 #yellow
+#set -g default-terminal "screen-256color"
+set -g default-terminal "xterm-256color"
+#set -g default-terminal xterm
+# pane number display
+#set-option -g display-panes-active-colour colour33 #blue
+set-option -g display-panes-active-colour "blue"
+set-option -g display-panes-colour "orange"
+#set-option -g display-panes-colour colour166 #orange
+
+# clock
+set-window-option -g clock-mode-colour colour64 #green
+
+### Colors.
+#set -g status-bg black
+#set -g status-fg white
+#set -g message-bg green
+#set -g message-fg black
+
+# Call out the active pane a bit more.
+#set -g pane-active-border-style "fg=black,bg=brightblack"
+set -g pane-active-border-style "fg=red,bg=orange"
+
+
+### Status bar.
+set -g status-right-length 50
+set -g status-right "#[fg=cyan]#h"
+
+
+bind m set-window-option main-pane-height 90\; select-layout main-horizontal
+#bind-key C command-prompt -p "Name of new window: " "new-window -n '%%'"
+set-window-option -g automatic-rename off
+set-option -g allow-rename off
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+# TMUX POWERLINE
+# ==============
+set-option -g status on
+set-option -g status-interval 0
+set-option -g status-justify "centre"
+set-option -g status-left-length 90
+set-option -g status-right-length 55
+set-option -g visual-activity on
+setw -g monitor-activity off
+set -g terminal-overrides "*88col*:colors=88,*256col*:colors=256,xterm*:colors=256"
+#set -g status-left '#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r | cut -c 1-6)#[default]'
+#set -g status-right '#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) #[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") #[fg=white,bg=default]%a%l:%M:%S %p#[default] #[fg=blue]%Y-%m-%d'
+set-option -g status-left "#(~/.tmux/tmux-powerline/powerline.sh left)"
+set-option -g status-right "#(~/.tmux/tmux-powerline/powerline.sh right)"
+
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+set -g @shell_mode 'vi'
+set -g @yank_selection 'clipboard'
+#need  brew install urlview
+#brew install extract_url
+set -g @urlview-key 'u'
+set -g @plugin 'tmux-plugins/tmux-urlview'
+set -g @fpp-key 'e'
+set -g @plugin 'jbnicolai/tmux-fpp'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/language-tmux'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-open'
+run '~/.tmux/plugins/tpm/tpm'

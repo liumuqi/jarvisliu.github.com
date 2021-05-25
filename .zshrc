@@ -354,7 +354,7 @@ export no_proxy=localhost,127.0.0.1,.oa.com,.qq.com,.tencent.com
 export GOPRIVATE=git.code.oa.com,git.woa.com
 export GOPROXY="https://goproxy.woa.com,direct"
 export GOSUMDB="sum.woa.com+643d7a06+Ac5f5VOC4N8NUXdmhbm8pZSXIWfhek5JSmWdWrq7pLX4"
-export GONOPROXY="git.code.oa.com,git.woa.com"
+export GONOPROXY="git.code.oa.com,git.woa.com,github.com"
 export GONOSUMDB="git.code.oa.com,git.woa.com"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

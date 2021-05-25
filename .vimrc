@@ -65,8 +65,8 @@ Plugin 'rust-lang/rust.vim'
 " vim-scripts repos
 Plugin 'vcscommand.vim'
 "Plugin 'SudoEdit.vim'
-Plugin 'EasyGrep'
-Plugin 'VimIM'
+"Plugin 'EasyGrep'
+"Plugin 'VimIM'
 "......................................
 " My Plugins here:
 "
@@ -117,13 +117,13 @@ filetype plugin indent on
 filetype plugin on
 
 "proto语法文件
- augroup filetype
-   au! BufRead,BufNewFile *.proto setfiletype proto
- augroup end
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
 
 "恢复上次光标位置
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 "启动界面
 set shortmess=atI
@@ -180,10 +180,10 @@ let g:miniBufExplModSelTarget = 1
 let g:ctrlp_map = '<c-l>'
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_custom_ignore = "{
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|log)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \}"
+ \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+ \ 'file': '\v\.(exe|so|dll|log)$',
+ \ 'link': 'some_bad_symbolic_links',
+ \}"
 "======neocomlete===============================================================================
 let g:neocomplete#enable_at_startup       = 1
 let g:neocomplete#disable_auto_complete   = 0
@@ -209,7 +209,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+   let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -272,7 +272,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:neocomplete#force_overwrite_completefunc = 1
 "" Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+ let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
@@ -293,7 +293,7 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+ set conceallevel=2 concealcursor=niv
 endif
 
 "=====================================================================================
@@ -487,15 +487,15 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 " to see error location list
 function! CloseScratch() abort
-    pc
+   pc
 endfunction
 function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
+   let old_last_winnr = winnr('$')
+   lclose
+   if old_last_winnr == winnr('$')
+      " Nothing was closed, open syntastic error location panel
+       Errors
+   endif
 endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
 nnoremap <Leader>c :call CloseScratch()<cr>
@@ -503,11 +503,11 @@ nnoremap <Leader>sn :lnext<cr>
 nnoremap <Leader>sp :lprevious<cr>
 
 function! DiffToggle()
-    if &diff
-        diffoff
-    else
-        diffthis
-    endif
+   if &diff
+       diffoff
+   else
+       diffthis
+   endif
 endfunction
 
 nnoremap <silent> <Leader>dl :diffget local<CR>
@@ -523,8 +523,8 @@ let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
 "忽略文件、隐藏文件
- let NERDTreeIgnore = ['\.pyc$']
- let NERDTreeSortOrder=['\/$', 'Makefile', 'makefile', '*', '\~$']
+let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeSortOrder=['\/$', 'Makefile', 'makefile', '*', '\~$']
 "===================================================
 set noignorecase
 set smartcase
@@ -607,8 +607,8 @@ set secure
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 augroup project
-    autocmd!
-    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+   autocmd!
+   autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
 let &path.="./,./src/,./include,./src/include,/usr/include/AL,"
 let g:airline_powerline_fonts = 1
